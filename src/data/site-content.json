@@ -1,0 +1,251 @@
+{
+  "brand": {
+    "name": "James Portfolio",
+    "tagline": "Fullstack Web Developer | Shopify Specialist"
+  },
+  "hero": {
+    "heading": "Build, optimize, and scale your Shopify and fullstack web experience.",
+    "subheading": "Over 10 years delivering ecommerce, consulting, and product engineering solutions for businesses of all sizes.",
+    "quote": "Your storefront is only as strong as the experience behind it.",
+    "primaryCta": {
+      "label": "View Services",
+      "href": "/services"
+    },
+    "secondaryCta": {
+      "label": "Start a Project",
+      "href": "/contact"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "intro": "I am a fullstack web developer with over 10 years of experience helping businesses ship performant, maintainable, and conversion-focused digital products.",
+    "focus": "My core focus is fullstack development with deep Shopify platform expertise, from storefront optimization to custom app development.",
+    "highlights": [
+      "10+ years in fullstack web development",
+      "Shopify architecture, theme, and app expertise",
+      "Process optimization and third-party integrations",
+      "Accessibility and performance-first engineering"
+    ]
+  },
+  "services": {
+    "title": "Services",
+    "intro": "Practical, measurable support tailored to your stage and goals.",
+    "items": [
+      {
+        "title": "Shopify Ecommerce Services",
+        "description": "Store setup, theme customization, performance tuning, checkout and UX improvements to increase revenue."
+      },
+      {
+        "title": "Technical Consulting",
+        "description": "Hands-on support to optimize codebases, delivery processes, system architecture, and tool integrations."
+      },
+      {
+        "title": "Fullstack & Shopify App Development",
+        "description": "End-to-end web and app development with modern React and Node.js stacks, including Shopify app builds."
+      },
+      {
+        "title": "Project-Based Delivery",
+        "description": "Dedicated implementation for a defined scope and timeline through project completion."
+      },
+      {
+        "title": "Retainer Support",
+        "description": "Reserved weekly or monthly engineering hours for ongoing development, maintenance, and advisory needs."
+      },
+      {
+        "title": "Performance & Accessibility Audits",
+        "description": "Actionable audits for page speed and accessibility with prioritized recommendations your team can execute."
+      }
+    ]
+  },
+  "shopifyServicePage": {
+    "title": "Shopify Services",
+    "intro": "From performance tuning to custom app implementation, I help Shopify brands ship faster and scale with confidence.",
+    "items": [
+      {
+        "title": "Storefront Optimization",
+        "description": "Improve Core Web Vitals, conversion flow, and UX consistency to create a faster and higher-converting storefront."
+      },
+      {
+        "title": "Theme Extension & Customization",
+        "description": "Extend your Shopify theme with reusable sections, advanced merchandising features, and clean, maintainable code."
+      },
+      {
+        "title": "App Integrations",
+        "description": "Integrate third-party tools for CRM, subscriptions, reviews, analytics, and operations with stable data flow."
+      },
+      {
+        "title": "Custom Shopify App Building",
+        "description": "Build private or public Shopify apps tailored to your workflows, including admin tooling and backend services."
+      }
+    ],
+    "deliverables": [
+      "Technical roadmap with prioritized milestones",
+      "Implementation with code quality and testing standards",
+      "Performance and accessibility checks before release",
+      "Handoff documentation for your team"
+    ]
+  },
+  "homepage": {
+    "revealLines": [
+      "I help teams turn technical chaos into scalable systems.",
+      "From faster Shopify storefronts to cleaner engineering workflows.",
+      "So your team can ship confidently and grow sustainably."
+    ],
+    "statsSection": {
+      "eyebrow": "Impact Snapshot",
+      "title": "Engineering improvements that your users and team can feel",
+      "description": "I focus on practical wins: faster page loads, smoother operations, and stronger accessibility standards that improve conversion and long-term maintainability.",
+      "imageUrl": "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
+      "stats": [
+        {
+          "value": "30-65%",
+          "label": "Typical page speed improvements after performance-focused optimization"
+        },
+        {
+          "value": "WCAG 2.2",
+          "label": "Accessibility-first audits and remediation support for key user journeys"
+        },
+        {
+          "value": "10+ years",
+          "label": "Hands-on fullstack and Shopify delivery across multiple business stages"
+        }
+      ]
+    },
+    "coreServicesShowcase": {
+      "eyebrow": "Core Services",
+      "title": "Scroll to explore how I support ecommerce teams",
+      "imageUrl": "https://images.unsplash.com/photo-1526738549149-8e07eca6c147?auto=format&fit=crop&w=900&q=80",
+      "description": "As the object rotates, each service focus appears with a clear value proposition."
+    },
+    "skillsSection": {
+      "eyebrow": "The stack behind the work",
+      "title": "Skills & tooling",
+      "intro": "Languages, frameworks, and Shopify depth I bring to storefronts, apps, and integrations.",
+      "skills": [
+        "TypeScript",
+        "JavaScript",
+        "React",
+        "Next.js",
+        "Node.js",
+        "HTML & CSS",
+        "Tailwind CSS",
+        "Shopify Themes",
+        "Liquid",
+        "GraphQL",
+        "REST APIs",
+        "PostgreSQL",
+        "Git",
+        "Accessibility (WCAG)"
+      ]
+    },
+    "pricingSection": {
+      "eyebrow": "Retainers & programs",
+      "title": "Technical partnership that moves revenue, not a punch list",
+      "intro": "For Shopify brands in the roughly $500K–$10M range—and agencies that need senior Shopify execution—ongoing retainers keep performance, conversion, and architecture from falling behind. Each tier is sized to a typical monthly capacity; we align on outcomes and priorities before work starts.",
+      "footerCta": {
+        "title": "Unsure which tier matches your roadmap?",
+        "description": "Share where revenue leaks, what’s slow, and what you’re launching next. I’ll recommend Foundation, Growth, Scale—or a custom program—in one conversation.",
+        "label": "Book a discovery call",
+        "href": "/contact"
+      },
+      "tiers": [
+        {
+          "kind": "plan",
+          "number": "1",
+          "name": "Foundation",
+          "badge": null,
+          "compareAtPrice": null,
+          "price": "$1,400",
+          "pricePeriod": "/ month",
+          "features": [
+            "Checkout and PDP fixes that protect conversion instead of patching symptoms",
+            "Core Web Vitals and mobile UX improvements shoppers actually feel",
+            "Theme and integration guardrails so promos and apps don’t destabilize the storefront",
+            "Clear prioritization against revenue risk—not ad-hoc tickets with no owner",
+            "Async technical direction your internal team or agency can execute against",
+            "Monthly review of what shipped, what moved metrics, and what’s next"
+          ],
+          "cta": { "label": "Talk Foundation", "href": "/contact" }
+        },
+        {
+          "kind": "plan",
+          "number": "2",
+          "name": "Growth",
+          "badge": "Most popular",
+          "compareAtPrice": null,
+          "price": "$3,400",
+          "pricePeriod": "/ month",
+          "features": [
+            "Faster iteration on merchandising, landing experiences, and post-purchase flows",
+            "Reliable app, data, and automation work that reduces manual ops and support load",
+            "Performance and reliability work tied to traffic spikes and revenue events",
+            "Architecture decisions that keep Shopify, headless edges, and backends coherent as you scale",
+            "Shared backlog with explicit tradeoffs so launches don’t slip silently",
+            "Direct access for stakeholders; tight loops with your lead dev or PM"
+          ],
+          "cta": { "label": "Talk Growth", "href": "/contact" }
+        },
+        {
+          "kind": "plan",
+          "number": "3",
+          "name": "Scale",
+          "badge": null,
+          "compareAtPrice": null,
+          "price": "$6,800",
+          "pricePeriod": "/ month",
+          "features": [
+            "Senior ownership across theme, custom app, and integration surfaces",
+            "Proactive hardening before BFCM, migrations, and major replatform moments",
+            "Technical due diligence on vendors, apps, and build-vs-buy calls",
+            "Scalable patterns for metafields, data, checkout, and admin workflows",
+            "Weekly leadership sync on risk, roadmap, and measurable storefront outcomes",
+            "White-glove collaboration with agencies or internal engineering leads"
+          ],
+          "cta": { "label": "Talk Scale", "href": "/contact" }
+        },
+        {
+          "kind": "custom",
+          "name": "Custom",
+          "badge": "Programs",
+          "useCases": [
+            "Performance and conversion audits with a prioritized remediation roadmap",
+            "Private or custom Shopify apps, admin tools, and integration layers",
+            "Multi-week implementation sprints with milestones tied to launch or revenue",
+            "Fractional technical leadership alongside your team or agency roster"
+          ],
+          "howItWorks": "We scope in writing—goals, constraints, success signals, and a fixed fee or staged milestones. You get clarity before commit; I own delivery against what we agreed.",
+          "cta": { "label": "Scope a program", "href": "/contact" },
+          "footnote": "Ideal when you need depth without an open-ended retainer, or when procurement requires a defined SOW."
+        }
+      ]
+    }
+  },
+  "faqs": [
+    {
+      "question": "What types of businesses do you work with?",
+      "answer": "I work with businesses of any size, including brand-new stores and established teams that need technical support to scale."
+    },
+    {
+      "question": "Can you support both strategy and implementation?",
+      "answer": "Yes. I can consult on architecture and process, then implement improvements across frontend, backend, and Shopify ecosystems."
+    },
+    {
+      "question": "Do you offer short-term and long-term engagement models?",
+      "answer": "Yes. You can hire me for project-based work, fixed duration support, or an ongoing monthly/weekly retainer."
+    },
+    {
+      "question": "Can you audit existing products for performance and accessibility?",
+      "answer": "Absolutely. I provide detailed page speed and accessibility audits with prioritized action items and optional implementation support."
+    }
+  ],
+  "contact": {
+    "title": "Contact",
+    "intro": "Tell me about your store, app, or technical challenge and I will follow up with practical next steps.",
+    "email": "hello@jamesportfolio.dev",
+    "availability": "Open to project work, consulting engagements, and retainer partnerships."
+  },
+  "socials": {
+    "instagram": "https://instagram.com",
+    "linkedin": "https://linkedin.com"
+  }
+}
