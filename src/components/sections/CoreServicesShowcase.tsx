@@ -2,17 +2,17 @@
 
 import Image, { StaticImageData } from "next/image";
 import { useEffect, useRef, useState } from "react";
-import portfolioIllustration1 from "@/assets/portfolio-illustration-1.svg";
-import portfolioIllustration3 from "@/assets/portfolio-illustration-3.svg";
-import portfolioIllustration6 from "@/assets/portfolio-illustration-6.svg";
+import portfolioIllustration2 from "@/assets/portfolio-illustration-2.svg";
+import portfolioIllustration9 from "@/assets/portfolio-illustration-9.svg";
+import portfolioIllustration5 from "@/assets/portfolio-illustration-5.svg";
 import portfolioIllustration7 from "@/assets/portfolio-illustration-7.svg";
 import siteContent from "@/data/site-content.json";
 
 const showcaseIllustrations: StaticImageData[] = [
-  portfolioIllustration1,
+  portfolioIllustration2,
+  portfolioIllustration9,
   portfolioIllustration7,
-  portfolioIllustration3,
-  portfolioIllustration6,
+  portfolioIllustration5,
 ];
 
 export default function CoreServicesShowcase() {
@@ -34,7 +34,10 @@ export default function CoreServicesShowcase() {
       const viewport = window.innerHeight;
       const scrollDistance = rect.height - viewport;
       const traveled = Math.max(0, -rect.top);
-      const next = scrollDistance > 0 ? Math.min(1, Math.max(0, traveled / scrollDistance)) : 0;
+      const next =
+        scrollDistance > 0
+          ? Math.min(1, Math.max(0, traveled / scrollDistance))
+          : 0;
       setProgress(next);
     };
 
@@ -50,16 +53,17 @@ export default function CoreServicesShowcase() {
 
   return (
     <section
+      id="services"
       ref={sectionRef}
-      className="relative left-1/2 w-screen -translate-x-1/2"
+      className="relative left-1/2 w-screen -translate-x-1/2 scroll-mt-24"
       style={{ height: "300vh" }}
-      aria-label="Core services showcase"
-    >
+      aria-label="Core services showcase">
       <div className="sticky top-0 h-screen overflow-hidden bg-brand-paper-strong text-brand-ink">
         <div className="mx-auto flex h-full w-full max-w-6xl items-center justify-center px-6 md:px-10">
           <div className="relative h-80 w-80 md:h-96 md:w-96">
             {services.map((service, index) => {
-              const imageAsset = showcaseIllustrations[index % showcaseIllustrations.length];
+              const imageAsset =
+                showcaseIllustrations[index % showcaseIllustrations.length];
               const isActive = index === activeIndex;
 
               return (
@@ -92,8 +96,7 @@ export default function CoreServicesShowcase() {
                   aria-hidden={!isActive}
                   className={`absolute top-1/2 max-w-xs -translate-y-1/2 transition-all duration-500 2xl:max-w-md ${
                     isLeft ? "left-0 text-left" : "right-0 text-left"
-                  } ${isActive ? "opacity-100" : "opacity-0"}`}
-                >
+                  } ${isActive ? "opacity-100" : "opacity-0"}`}>
                   <h3 className="text-2xl font-bold leading-tight text-brand-ink md:text-3xl">
                     {service.title}
                   </h3>

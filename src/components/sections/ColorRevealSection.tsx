@@ -46,8 +46,7 @@ export default function ColorRevealSection({ lines }: ColorRevealSectionProps) {
   return (
     <section
       id="color-reveal"
-      className="relative left-1/2 w-screen -translate-x-1/2 bg-brand-canvas px-6 py-10 md:px-10 md:py-14"
-    >
+      className="relative left-1/2 w-screen -translate-x-1/2 bg-brand-canvas px-6 pb-10 pt-16 md:px-10 md:pb-14 md:pt-20">
       <div className="mx-auto flex max-w-6xl flex-col gap-4">
         {lines.map((line, index) => (
           <p
@@ -57,8 +56,7 @@ export default function ColorRevealSection({ lines }: ColorRevealSectionProps) {
               color: "var(--brand-ink)",
               opacity: opacities[index],
               transition: "opacity 220ms ease-out",
-            }}
-          >
+            }}>
             {line}
           </p>
         ))}

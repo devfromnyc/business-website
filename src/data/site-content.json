@@ -4,16 +4,16 @@
     "tagline": "Fullstack Web Developer | Shopify Specialist"
   },
   "hero": {
-    "heading": "Build, optimize, and scale your Shopify and fullstack web experience.",
+    "heading": "Build, optimize, and scale your Ecommerce Store or fullstack web experience.",
     "subheading": "Over 10 years delivering ecommerce, consulting, and product engineering solutions for businesses of all sizes.",
     "quote": "Your storefront is only as strong as the experience behind it.",
     "primaryCta": {
       "label": "View Services",
-      "href": "/services"
+      "href": "/#services"
     },
     "secondaryCta": {
       "label": "Start a Project",
-      "href": "/contact"
+      "href": "/#contact"
     }
   },
   "about": {
@@ -30,36 +30,127 @@
   "services": {
     "title": "Services",
     "intro": "Practical, measurable support tailored to your stage and goals.",
+    "landing": {
+      "hero": {
+        "sectionAriaLabel": "Services introduction",
+        "eyebrow": "Engineering services",
+        "heading": "Services",
+        "introSuffix": "Storefront engineering, Shopify depth, performance, and accessibility blended into a roadmap that fits your stage—from single audits to multi-phase builds, focused on outcomes you can measure.",
+        "primaryCta": {
+          "label": "Start a project",
+          "href": "/#contact"
+        },
+        "secondaryCta": {
+          "label": "Shopify deep dive",
+          "href": "/#shopify"
+        }
+      }
+    },
+    "footerCta": {
+      "title": "Need a blended engagement instead of a single service line?",
+      "description": "From Shopify execution to fullstack builds, consulting, and performance work, we can combine services into one practical roadmap. Share what you need to launch or improve, and I will recommend the cleanest starting point.",
+      "label": "Start a conversation",
+      "href": "/#contact"
+    },
     "items": [
       {
-        "title": "Shopify Ecommerce Services",
+        "title": "Shopify Ecommerce",
         "description": "Store setup, theme customization, performance tuning, checkout and UX improvements to increase revenue."
-      },
-      {
-        "title": "Technical Consulting",
-        "description": "Hands-on support to optimize codebases, delivery processes, system architecture, and tool integrations."
       },
       {
         "title": "Fullstack & Shopify App Development",
         "description": "End-to-end web and app development with modern React and Node.js stacks, including Shopify app builds."
       },
       {
-        "title": "Project-Based Delivery",
-        "description": "Dedicated implementation for a defined scope and timeline through project completion."
+        "title": "Technical Consulting",
+        "description": "Hands-on support to optimize codebases, delivery processes, system architecture, and tool integrations."
       },
       {
-        "title": "Retainer Support",
-        "description": "Reserved weekly or monthly engineering hours for ongoing development, maintenance, and advisory needs."
+        "title": "Page Speed",
+        "description": "Website performance tuning, Core Web Vitals improvements, and page speed score optimization for faster user experiences."
       },
       {
-        "title": "Performance & Accessibility Audits",
-        "description": "Actionable audits for page speed and accessibility with prioritized recommendations your team can execute."
+        "title": "Web Accessibility",
+        "description": "Accessibility reviews and remediation support for key journeys, with practical fixes your team can maintain."
       }
     ]
   },
   "shopifyServicePage": {
     "title": "Shopify Services",
     "intro": "From performance tuning to custom app implementation, I help Shopify brands ship faster and scale with confidence.",
+    "landing": {
+      "hero": {
+        "sectionAriaLabel": "Shopify services introduction",
+        "eyebrow": "Shopify theme depth",
+        "heading": "Make your theme work for you",
+        "introSuffix": "From porting sections across themes to new blocks, design tokens, and a calmer customizer—I build so merchants can move fast without breaking the storefront.",
+        "primaryCta": {
+          "label": "Plan a theme engagement",
+          "href": "/#contact"
+        },
+        "secondaryCta": {
+          "label": "All services",
+          "href": "/#services"
+        },
+        "heroImageKey": "portfolioIllustration1",
+        "heroImageAlt": "Illustration representing Shopify storefront and ecommerce experience",
+        "heroImageUnoptimized": true
+      },
+      "story": {
+        "eyebrow": "The story",
+        "title": "What “custom theme work” really unlocks in Shopify",
+        "description": "Shopify themes are not frozen templates. With the right Liquid, schema, and structure, we can reshape how pages are built, how merchants edit them, and how your brand scales across templates—without constantly reopening the codebase for every campaign."
+      },
+      "chapters": [
+        {
+          "title": "Layouts you love—and an editor your team can run with",
+          "body": "Spotted a homepage, collection row, or promo strip in another Shopify theme that fits your vision? We can bring that idea into your store and make it feel native to your brand. At the same time, we can tidy the controls behind the scenes—things like colors, banners, and repeatable content blocks—so day-to-day updates are clearer, safer during sales, and less likely to turn into “we need a developer” every time marketing wants to try something new.",
+          "imageKey": "portfolioIllustration2",
+          "imageAlt": "Illustration representing adaptable storefront sections and layouts",
+          "unoptimized": true
+        },
+        {
+          "title": "Liquid, JSON templates, and performance-aware markup",
+          "body": "Under the hood it’s structured Liquid, metafields, and app blocks where appropriate—written so your storefront stays fast, accessible, and easier to regression-test when Shopify ships platform changes.",
+          "imageKey": "portfolioIllustration3",
+          "imageAlt": "Illustration representing theme code, structure, and performance-minded implementation",
+          "unoptimized": true
+        },
+        {
+          "title": "Product templates, cards, and merchandising logic",
+          "body": "Product grids, badges, variant pickers, and complementary content can all be tailored: metafield-driven badges, collection-specific layouts, and blocks your merchandising team can rearrange in the theme editor.",
+          "imageKey": "shopifyProductBlock",
+          "imageAlt": "Shopify product section with blocks in the theme editor"
+        }
+      ],
+      "designSystem": {
+        "eyebrow": "Design systems in-theme",
+        "title": "A calmer customizer and a real design system—not one-off CSS patches.",
+        "description": "I group related settings into logical sections, use theme presets where they help, and align typography, spacing, and color with CSS variables or a small in-theme token layer. Merchants see fewer cryptic fields, clearer labels, and blocks that read like the components your brand actually uses—so “edit the homepage” stops meaning “file a ticket.”",
+        "bullets": [
+          "Shared section styles and snippets so new pages stay on-brand.",
+          "Block-level controls instead of hard-coded layouts where it makes sense.",
+          "Documentation and short Loom-style handoffs so your team owns day-two edits confidently."
+        ],
+        "bentoTopImageKey": "shopifyCustomizer",
+        "bentoTopImageAlt": "Shopify theme customizer with sections, blocks, and settings",
+        "bentoLeftImageKey": "shopifyImageBannerBlock",
+        "bentoLeftImageAlt": "Shopify theme editor showing image banner section and blocks",
+        "bentoRightImageKey": "shopifyProductBlock",
+        "bentoRightImageAlt": "Shopify product template with blocks in the theme editor"
+      },
+      "servicesIntro": {
+        "eyebrow": "Beyond the theme editor",
+        "title": "Storefront, integrations, and apps—when the theme alone is not enough",
+        "description": "Theme work is often the visible half. Here is how I pair it with the rest of the Shopify surface area when your roadmap needs it."
+      },
+      "closingCta": {
+        "title": "Need theme work blended with apps, integrations, or a longer runway?",
+        "description": "Retainers, audits-only passes, multi-phase launches, and replatform support are all on the table once we’ve mapped your storefront, stack, and priorities. Tell me what you’re trying to ship—I’ll suggest the cleanest Shopify entry point.",
+        "label": "Start a conversation",
+        "href": "/#contact"
+      }
+    },
     "items": [
       {
         "title": "Storefront Optimization",
@@ -87,9 +178,9 @@
   },
   "homepage": {
     "revealLines": [
-      "I help teams turn technical chaos into scalable systems.",
-      "From faster Shopify storefronts to cleaner engineering workflows.",
-      "So your team can ship confidently and grow sustainably."
+      "Simply put, my goal is to create a technological solution that solves a problem for you.",
+      "From storefronts and websites, to custom apps or integrations",
+      "I can help you build and optimize the right solution for your business."
     ],
     "statsSection": {
       "eyebrow": "Impact Snapshot",
@@ -117,6 +208,35 @@
       "imageUrl": "https://images.unsplash.com/photo-1526738549149-8e07eca6c147?auto=format&fit=crop&w=900&q=80",
       "description": "As the object rotates, each service focus appears with a clear value proposition."
     },
+    "servicesGrid": {
+      "eyebrow": "Engineering services",
+      "title": "Your project roadmap.",
+      "paragraphSegments": [
+        { "text": "From " },
+        { "text": "Shopify storefront work", "emphasis": true },
+        { "text": " to " },
+        { "text": "fullstack apps and consulting", "emphasis": true },
+        { "text": " — here is how engagements typically unfold." }
+      ],
+      "steps": [
+        {
+          "label": "01 · SHOPIFY ECOMMERCE",
+          "description": "Store setup, theme customization, and checkout improvements that support revenue.",
+          "imageKey": "portfolioIllustration13"
+        },
+        {
+          "label": "02 · FULLSTACK & APPS",
+          "description": "End-to-end builds with modern React and Node.js stacks, including Shopify apps.",
+          "imageKey": "portfolioIllustration14"
+        },
+        {
+          "label": "03 · TECHNICAL CONSULTING",
+          "description": "Hands-on support for architecture, delivery, integrations, and long-term maintainability.",
+          "imageKey": "portfolioIllustration15"
+        }
+      ],
+      "cycleIntervalMs": 4000
+    },
     "skillsSection": {
       "eyebrow": "The stack behind the work",
       "title": "Skills & tooling",
@@ -139,83 +259,81 @@
       ]
     },
     "pricingSection": {
-      "eyebrow": "Retainers & programs",
-      "title": "Technical partnership that moves revenue, not a punch list",
-      "intro": "For Shopify brands in the roughly $500K–$10M range—and agencies that need senior Shopify execution—ongoing retainers keep performance, conversion, and architecture from falling behind. Each tier is sized to a typical monthly capacity; we align on outcomes and priorities before work starts.",
+      "eyebrow": "Pricing & starting points",
+      "title": "Straightforward ways to begin—then we scope the rest together",
+      "intro": null,
       "footerCta": {
-        "title": "Unsure which tier matches your roadmap?",
-        "description": "Share where revenue leaks, what’s slow, and what you’re launching next. I’ll recommend Foundation, Growth, Scale—or a custom program—in one conversation.",
-        "label": "Book a discovery call",
-        "href": "/contact"
+        "title": "Need something blended or larger than a first slice?",
+        "description": "Retainers, audits-only, and multi-phase programs are all on the table once we’ve talked through your roadmap. Tell me what you’re trying to ship—I’ll suggest the cleanest entry point.",
+        "label": "Start a conversation",
+        "href": "/#contact"
       },
       "tiers": [
         {
           "kind": "plan",
           "number": "1",
-          "name": "Foundation",
-          "badge": null,
+          "name": "Shopify ecommerce",
+          "badge": "",
           "compareAtPrice": null,
-          "price": "$1,400",
-          "pricePeriod": "/ month",
+          "subtext": "Starting at",
+          "price": "$2,500",
+          "pricePeriod": "for first scoped work",
           "features": [
-            "Checkout and PDP fixes that protect conversion instead of patching symptoms",
-            "Core Web Vitals and mobile UX improvements shoppers actually feel",
-            "Theme and integration guardrails so promos and apps don’t destabilize the storefront",
-            "Clear prioritization against revenue risk—not ad-hoc tickets with no owner",
-            "Async technical direction your internal team or agency can execute against",
-            "Monthly review of what shipped, what moved metrics, and what’s next"
+            "Custom Themes, sections, checkout, cart, and PDPs",
+            "Storefront extension complete with new customizer settings",
+            "Custom Shopify apps and flow automations",
+            "Major promotions and marketing campaigns",
+            "Codebase optimization",
+            "Design System implementations"
           ],
-          "cta": { "label": "Talk Foundation", "href": "/contact" }
+          "cta": { "label": "Scope a project", "href": "/#contact" },
+          "footnote": "Larger app MVP scopes are quoted as their own slice after discovery—many engagements start with a storefront or integration sprint."
         },
         {
           "kind": "plan",
           "number": "2",
-          "name": "Growth",
-          "badge": "Most popular",
+          "name": "Website & Fullstack Applications",
+          "badge": null,
           "compareAtPrice": null,
-          "price": "$3,400",
-          "pricePeriod": "/ month",
+          "subtext": "Starting at",
+          "price": "$3,200",
+          "pricePeriod": "for a scoped build",
           "features": [
-            "Faster iteration on merchandising, landing experiences, and post-purchase flows",
-            "Reliable app, data, and automation work that reduces manual ops and support load",
-            "Performance and reliability work tied to traffic spikes and revenue events",
-            "Architecture decisions that keep Shopify, headless edges, and backends coherent as you scale",
-            "Shared backlog with explicit tradeoffs so launches don’t slip silently",
-            "Direct access for stakeholders; tight loops with your lead dev or PM"
+            "New websites or applications to meet your business needs",
+            "Landing pages, marketing sites, and business websites built for speed, clarity, and conversion",
+            "Custom frontend and backend features in React, Next.js, and Node.js for real product workflows",
+            "API integrations, database wiring, and third-party services"
           ],
-          "cta": { "label": "Talk Growth", "href": "/contact" }
+          "cta": { "label": "Start a web app project", "href": "/#contact" }
         },
         {
           "kind": "plan",
           "number": "3",
-          "name": "Scale",
+          "name": "Page Speed & Web Accessibility Audits",
           "badge": null,
           "compareAtPrice": null,
-          "price": "$6,800",
-          "pricePeriod": "/ month",
+          "subtext": "Starting at",
+          "price": "$1,800",
+          "pricePeriod": "for a scoped engagement",
           "features": [
-            "Senior ownership across theme, custom app, and integration surfaces",
-            "Proactive hardening before BFCM, migrations, and major replatform moments",
-            "Technical due diligence on vendors, apps, and build-vs-buy calls",
-            "Scalable patterns for metafields, data, checkout, and admin workflows",
-            "Weekly leadership sync on risk, roadmap, and measurable storefront outcomes",
-            "White-glove collaboration with agencies or internal engineering leads"
+            "Full website or page specific audits",
+            "Audit report with prioritized recommendations",
+            "Actionable optimizations for both accessibility and page speed"
           ],
-          "cta": { "label": "Talk Scale", "href": "/contact" }
+          "cta": { "label": "Scope an audit", "href": "/#contact" }
         },
         {
           "kind": "custom",
           "name": "Custom",
           "badge": "Programs",
           "useCases": [
-            "Performance and conversion audits with a prioritized remediation roadmap",
+            "Multi step projects with multiple phases and milestones, such as a new Shopify store with a custom theme and flow automations or application with complex requirements",
             "Private or custom Shopify apps, admin tools, and integration layers",
-            "Multi-week implementation sprints with milestones tied to launch or revenue",
-            "Fractional technical leadership alongside your team or agency roster"
+            "Multi-week implementation sprints with milestones tied to launch or revenue"
           ],
-          "howItWorks": "We scope in writing—goals, constraints, success signals, and a fixed fee or staged milestones. You get clarity before commit; I own delivery against what we agreed.",
-          "cta": { "label": "Scope a program", "href": "/contact" },
-          "footnote": "Ideal when you need depth without an open-ended retainer, or when procurement requires a defined SOW."
+          "howItWorks": "We scope out all goals, constraints, success signals, and a fixed fee or staged milestones. You get clarity before commit.",
+          "cta": { "label": "Scope a program", "href": "/#contact" },
+          "footnote": "Ideal when you need depth without a single-service starting price, or when procurement requires a defined SOW."
         }
       ]
     }

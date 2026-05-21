@@ -1,0 +1,416 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" preserveAspectRatio="xMidYMid slice">
+      
+    <defs>
+      <pattern id="dots-21" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
+        <circle cx="2" cy="2" r="1" fill="#1c2030" opacity="0.10"></circle>
+      </pattern>
+      <pattern id="grid-21" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M40 0 L0 0 0 40" fill="none" stroke="#1c2030" stroke-width="0.6" opacity="0.08"></path>
+      </pattern>
+      <pattern id="hatch-21" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <line x1="0" y1="0" x2="0" y2="6" stroke="#f43f5e" stroke-width="2" opacity="0.55"></line>
+      </pattern>
+      <linearGradient id="paper-21" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#ffffff"></stop>
+        <stop offset="1" stop-color="#f8f3e8"></stop>
+      </linearGradient>
+      <linearGradient id="accent-21" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#f43f5e" stop-opacity="0.95"></stop>
+        <stop offset="1" stop-color="#f43f5e" stop-opacity="0.55"></stop>
+      </linearGradient>
+<filter id="grain-21">
+        <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"></feTurbulence>
+        <feColorMatrix values="0 0 0 0 0
+                               0 0 0 0 0
+                               0 0 0 0 0
+                               0 0 0 0.08 0"></feColorMatrix>
+        <feComposite in2="SourceGraphic" operator="in"></feComposite>
+      </filter>
+    </defs>
+  
+      
+      <rect width="1200" height="1200" fill="transparent" />
+  <rect width="1200" height="1200" fill="none" />
+      
+      
+    
+
+      <!-- left rail label -->
+      <rect x="80" y="140" width="80" height="8" rx="4" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></rect>
+      <rect x="80" y="160" width="240" height="22" rx="6" fill="#1c2030" stroke="none" stroke-width="1" opacity="1"></rect>
+      <rect x="80" y="196" width="320" height="8" rx="4" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></rect>
+      <rect x="80" y="212" width="280" height="8" rx="4" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></rect>
+
+      <!-- Phone frame on right (mini full-store preview) -->
+      <rect x="940" y="140" width="200" height="940" rx="28" fill="rgba(28,32,48,0.08)" stroke="none" stroke-width="1" opacity="1"></rect>
+      <rect x="936" y="136" width="200" height="940" rx="28" fill="#1c2030" stroke="none" stroke-width="1" opacity="1"></rect>
+      <rect x="946" y="146" width="180" height="920" rx="22" fill="#ffffff" stroke="none" stroke-width="1" opacity="1"></rect>
+      <!-- top status -->
+      <rect x="956" y="156" width="20" height="4" rx="2" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+      <rect x="1090" y="156" width="30" height="4" rx="2" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+      <!-- mini sections preview (same as the stack, scaled) -->
+      <g transform="translate(946, 170)">
+        <rect x="0" y="0" width="180" height="30" rx="0" fill="#efe7d3" stroke="none" stroke-width="1" opacity="1"></rect>
+        <rect x="12" y="12" width="60" height="6" rx="3" fill="#1c2030" stroke="none" stroke-width="1" opacity="0.85"></rect>
+        <rect x="140" y="12" width="14" height="6" rx="3" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+
+        <rect x="0" y="30" width="180" height="130" rx="0" fill="#f43f5e" stroke="none" stroke-width="1" opacity="0.4"></rect>
+        <circle cx="90" cy="95" r="30" fill="#f43f5e" stroke="none" stroke-width="1" opacity="1"></circle>
+        <rect x="40" y="138" width="100" height="8" rx="4" fill="#ffffff" stroke="none" stroke-width="1" opacity="0.85"></rect>
+
+        <rect x="0" y="160" width="180" height="16" rx="0" fill="#fbf8f1" stroke="none" stroke-width="1" opacity="1"></rect>
+
+        <rect x="0" y="176" width="180" height="180" rx="0" fill="#ffffff" stroke="none" stroke-width="1" opacity="1"></rect>
+        <rect x="12" y="188" width="80" height="8" rx="4" fill="#1c2030" stroke="none" stroke-width="1" opacity="0.85"></rect>
+        <rect x="12" y="210" width="76" height="60" rx="6" fill="#efe7d3" stroke="none" stroke-width="1" opacity="1"></rect>
+           <circle cx="50" cy="240" r="14" fill="#f43f5e" stroke="none" stroke-width="1" opacity="0.5"></circle><rect x="94" y="210" width="76" height="60" rx="6" fill="#efe7d3" stroke="none" stroke-width="1" opacity="1"></rect>
+           <circle cx="132" cy="240" r="14" fill="#f43f5e" stroke="none" stroke-width="1" opacity="0.6"></circle><rect x="12" y="280" width="76" height="60" rx="6" fill="#efe7d3" stroke="none" stroke-width="1" opacity="1"></rect>
+           <circle cx="50" cy="310" r="14" fill="#f43f5e" stroke="none" stroke-width="1" opacity="0.7"></circle><rect x="94" y="280" width="76" height="60" rx="6" fill="#efe7d3" stroke="none" stroke-width="1" opacity="1"></rect>
+           <circle cx="132" cy="310" r="14" fill="#f43f5e" stroke="none" stroke-width="1" opacity="0.8"></circle>
+
+        <rect x="0" y="356" width="180" height="100" rx="0" fill="#fbf8f1" stroke="none" stroke-width="1" opacity="1"></rect>
+        <rect x="20" y="376" width="100" height="8" rx="4" fill="#1c2030" stroke="none" stroke-width="1" opacity="0.85"></rect>
+        <rect x="20" y="394" width="140" height="6" rx="3" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></rect>
+        <rect x="20" y="408" width="120" height="6" rx="3" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></rect>
+        <rect x="20" y="428" width="70" height="14" rx="4" fill="#1c2030" stroke="none" stroke-width="1" opacity="1"></rect>
+
+        <rect x="0" y="456" width="180" height="120" rx="0" fill="#ffffff" stroke="none" stroke-width="1" opacity="1"></rect>
+        <rect x="20" y="470" width="100" height="8" rx="4" fill="#1c2030" stroke="none" stroke-width="1" opacity="0.85"></rect>
+        <circle cx="30" cy="524" r="18" fill="#efe7d3" stroke="none" stroke-width="1" opacity="1"></circle>
+           <rect x="18" y="552" width="24" height="6" rx="3" fill="#1c2030" stroke="none" stroke-width="1" opacity="0.7"></rect><circle cx="84" cy="524" r="18" fill="#efe7d3" stroke="none" stroke-width="1" opacity="1"></circle>
+           <rect x="72" y="552" width="24" height="6" rx="3" fill="#1c2030" stroke="none" stroke-width="1" opacity="0.7"></rect><circle cx="138" cy="524" r="18" fill="#efe7d3" stroke="none" stroke-width="1" opacity="1"></circle>
+           <rect x="126" y="552" width="24" height="6" rx="3" fill="#1c2030" stroke="none" stroke-width="1" opacity="0.7"></rect>
+
+        <rect x="0" y="576" width="180" height="60" rx="0" fill="#efe7d3" stroke="none" stroke-width="1" opacity="1"></rect>
+        <rect x="20" y="596" width="60" height="8" rx="4" fill="#1c2030" stroke="none" stroke-width="1" opacity="0.85"></rect>
+        <rect x="20" y="610" width="120" height="5" rx="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></rect>
+
+        <rect x="0" y="636" width="180" height="96" rx="0" fill="#1c2030" stroke="none" stroke-width="1" opacity="1"></rect>
+        <rect x="20" y="656" width="60" height="6" rx="3" fill="#ffffff" stroke="none" stroke-width="1" opacity="0.95"></rect>
+        <rect x="20" y="672" width="100" height="4" rx="2" fill="#ffffff" stroke="none" stroke-width="1" opacity="0.5"></rect>
+        <rect x="20" y="682" width="80" height="4" rx="2" fill="#ffffff" stroke="none" stroke-width="1" opacity="0.5"></rect>
+        <rect x="20" y="692" width="90" height="4" rx="2" fill="#ffffff" stroke="none" stroke-width="1" opacity="0.5"></rect>
+      </g>
+      <!-- notch -->
+      <rect x="1020" y="142" width="36" height="12" rx="6" fill="#1c2030" stroke="none" stroke-width="1" opacity="1"></rect>
+
+      <!-- LEFT: stack of section cards (the architecture) -->
+      <!-- Pattern: each section card shows handle | type chip | mini diagram | meta -->
+      
+            <rect x="80" y="264" width="800" height="76" rx="14" fill="#ffffff" stroke="#d9d2c2" stroke-width="1" opacity="1"></rect>
+            <!-- drag dots -->
+            <circle cx="106" cy="288" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="114" cy="288" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="106" cy="296" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="114" cy="296" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="106" cy="304" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="114" cy="304" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle>
+            <!-- icon block -->
+            <rect x="140" y="276" width="80" height="52" rx="8" fill="#efe7d3" stroke="none" stroke-width="1" opacity="1"></rect>
+            <rect x="148" y="300" width="64" height="12" rx="4" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+            <!-- name + meta -->
+            <rect x="240" y="282" width="200" height="12" rx="4" fill="#1c2030" stroke="none" stroke-width="1" opacity="0.9"></rect>
+            <rect x="240" y="302" width="240" height="6" rx="3" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></rect>
+            <rect x="240" y="314" width="180" height="6" rx="3" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></rect>
+            <!-- chip: type -->
+            <rect x="540" y="280" width="110" height="22" rx="11" fill="#efe7d3" stroke="none" stroke-width="1" opacity="1"></rect>
+            <rect x="556" y="288" width="76" height="6" rx="3" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+            <!-- chip: blocks -->
+            <rect x="540" y="310" width="50" height="18" rx="9" fill="#fbf8f1" stroke="#d9d2c2" stroke-width="1" opacity="1"></rect>
+            <rect x="550" y="316" width="30" height="5" rx="2" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+            <rect x="596" y="310" width="50" height="18" rx="9" fill="#fbf8f1" stroke="#d9d2c2" stroke-width="1" opacity="1"></rect>
+            <rect x="606" y="316" width="30" height="5" rx="2" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+            <!-- actions -->
+            <circle cx="700" cy="292" r="12" fill="none" stroke="#d9d2c2" stroke-width="1.5" opacity="1"></circle>
+            <rect x="692" y="290" width="16" height="4" rx="2" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+            <circle cx="736" cy="292" r="12" fill="none" stroke="#d9d2c2" stroke-width="1.5" opacity="1"></circle>
+            <path d="M 730 288 l 4 4 l 8 -8" fill="none" stroke="#f43f5e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="1"></path>
+            <circle cx="772" cy="292" r="12" fill="none" stroke="#d9d2c2" stroke-width="1.5" opacity="1"></circle>
+            <circle cx="770" cy="289" r="1.5" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></circle>
+            <circle cx="772" cy="289" r="1.5" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></circle>
+            <circle cx="774" cy="289" r="1.5" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></circle>
+
+            <!-- toggle -->
+            <rect x="820" y="282" width="40" height="22" rx="11" fill="#e3dccd" stroke="none" stroke-width="1" opacity="1"></rect>
+            <circle cx="832" cy="293" r="8" fill="#ffffff" stroke="none" stroke-width="1" opacity="1"></circle>
+
+            <!-- "+" between sections -->
+            
+              <line x1="480" y1="346" x2="480" y2="352" stroke="#d9d2c2" stroke-width="1" stroke-linecap="round" opacity="1"></line>
+              <circle cx="480" cy="356" r="11" fill="#ffffff" stroke="#f43f5e" stroke-width="1.5" opacity="1"></circle>
+              <path d="M 474 356 h 12 m -6 -6 v 12" fill="none" stroke="#f43f5e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="1"></path>
+            
+          
+            <rect x="80" y="356" width="800" height="76" rx="14" fill="#ffffff" stroke="#d9d2c2" stroke-width="1" opacity="1"></rect>
+            <!-- drag dots -->
+            <circle cx="106" cy="380" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="114" cy="380" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="106" cy="388" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="114" cy="388" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="106" cy="396" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="114" cy="396" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle>
+            <!-- icon block -->
+            <rect x="140" y="368" width="80" height="52" rx="8" fill="#efe7d3" stroke="none" stroke-width="1" opacity="1"></rect>
+            <rect x="148" y="384" width="64" height="8" rx="3" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect><rect x="148" y="398" width="32" height="6" rx="3" fill="#5b6175" stroke="none" stroke-width="1" opacity="0.5"></rect><rect x="184" y="398" width="28" height="6" rx="3" fill="#5b6175" stroke="none" stroke-width="1" opacity="0.5"></rect>
+            <!-- name + meta -->
+            <rect x="240" y="374" width="200" height="12" rx="4" fill="#1c2030" stroke="none" stroke-width="1" opacity="0.9"></rect>
+            <rect x="240" y="394" width="240" height="6" rx="3" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></rect>
+            <rect x="240" y="406" width="180" height="6" rx="3" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></rect>
+            <!-- chip: type -->
+            <rect x="540" y="372" width="110" height="22" rx="11" fill="#efe7d3" stroke="none" stroke-width="1" opacity="1"></rect>
+            <rect x="556" y="380" width="76" height="6" rx="3" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+            <!-- chip: blocks -->
+            <rect x="540" y="402" width="50" height="18" rx="9" fill="#fbf8f1" stroke="#d9d2c2" stroke-width="1" opacity="1"></rect>
+            <rect x="550" y="408" width="30" height="5" rx="2" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+            <rect x="596" y="402" width="50" height="18" rx="9" fill="#fbf8f1" stroke="#d9d2c2" stroke-width="1" opacity="1"></rect>
+            <rect x="606" y="408" width="30" height="5" rx="2" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+            <!-- actions -->
+            <circle cx="700" cy="384" r="12" fill="none" stroke="#d9d2c2" stroke-width="1.5" opacity="1"></circle>
+            <rect x="692" y="382" width="16" height="4" rx="2" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+            <circle cx="736" cy="384" r="12" fill="none" stroke="#d9d2c2" stroke-width="1.5" opacity="1"></circle>
+            <path d="M 730 380 l 4 4 l 8 -8" fill="none" stroke="#f43f5e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="1"></path>
+            <circle cx="772" cy="384" r="12" fill="none" stroke="#d9d2c2" stroke-width="1.5" opacity="1"></circle>
+            <circle cx="770" cy="381" r="1.5" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></circle>
+            <circle cx="772" cy="381" r="1.5" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></circle>
+            <circle cx="774" cy="381" r="1.5" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></circle>
+
+            <!-- toggle -->
+            <rect x="820" y="374" width="40" height="22" rx="11" fill="#e3dccd" stroke="none" stroke-width="1" opacity="1"></rect>
+            <circle cx="832" cy="385" r="8" fill="#ffffff" stroke="none" stroke-width="1" opacity="1"></circle>
+
+            <!-- "+" between sections -->
+            
+              <line x1="480" y1="438" x2="480" y2="444" stroke="#d9d2c2" stroke-width="1" stroke-linecap="round" opacity="1"></line>
+              <circle cx="480" cy="448" r="11" fill="#ffffff" stroke="#f43f5e" stroke-width="1.5" opacity="1"></circle>
+              <path d="M 474 448 h 12 m -6 -6 v 12" fill="none" stroke="#f43f5e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="1"></path>
+            
+          
+            <rect x="80" y="448" width="800" height="76" rx="14" fill="#ffffff" stroke="#f43f5e" stroke-width="2.5" opacity="1"></rect>
+            <!-- drag dots -->
+            <circle cx="106" cy="472" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="114" cy="472" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="106" cy="480" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="114" cy="480" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="106" cy="488" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="114" cy="488" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle>
+            <!-- icon block -->
+            <rect x="140" y="460" width="80" height="52" rx="8" fill="#efe7d3" stroke="none" stroke-width="1" opacity="1"></rect>
+            <rect x="148" y="470" width="64" height="40" rx="4" fill="#f43f5e" stroke="none" stroke-width="1" opacity="0.4"></rect><circle cx="180" cy="490" r="10" fill="#f43f5e" stroke="none" stroke-width="1" opacity="1"></circle>
+            <!-- name + meta -->
+            <rect x="240" y="466" width="200" height="12" rx="4" fill="#1c2030" stroke="none" stroke-width="1" opacity="0.9"></rect>
+            <rect x="240" y="486" width="240" height="6" rx="3" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></rect>
+            <rect x="240" y="498" width="180" height="6" rx="3" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></rect>
+            <!-- chip: type -->
+            <rect x="540" y="464" width="110" height="22" rx="11" fill="#f43f5e" stroke="none" stroke-width="1" opacity="0.18"></rect>
+            <rect x="556" y="472" width="76" height="6" rx="3" fill="#f43f5e" stroke="none" stroke-width="1" opacity="1"></rect>
+            <!-- chip: blocks -->
+            <rect x="540" y="494" width="50" height="18" rx="9" fill="#fbf8f1" stroke="#d9d2c2" stroke-width="1" opacity="1"></rect>
+            <rect x="550" y="500" width="30" height="5" rx="2" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+            <rect x="596" y="494" width="50" height="18" rx="9" fill="#fbf8f1" stroke="#d9d2c2" stroke-width="1" opacity="1"></rect>
+            <rect x="606" y="500" width="30" height="5" rx="2" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+            <!-- actions -->
+            <circle cx="700" cy="476" r="12" fill="none" stroke="#d9d2c2" stroke-width="1.5" opacity="1"></circle>
+            <rect x="692" y="474" width="16" height="4" rx="2" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+            <circle cx="736" cy="476" r="12" fill="none" stroke="#d9d2c2" stroke-width="1.5" opacity="1"></circle>
+            <path d="M 730 472 l 4 4 l 8 -8" fill="none" stroke="#f43f5e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="1"></path>
+            <circle cx="772" cy="476" r="12" fill="none" stroke="#d9d2c2" stroke-width="1.5" opacity="1"></circle>
+            <circle cx="770" cy="473" r="1.5" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></circle>
+            <circle cx="772" cy="473" r="1.5" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></circle>
+            <circle cx="774" cy="473" r="1.5" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></circle>
+
+            <!-- toggle -->
+            <rect x="820" y="466" width="40" height="22" rx="11" fill="#f43f5e" stroke="none" stroke-width="1" opacity="1"></rect>
+            <circle cx="848" cy="477" r="8" fill="#ffffff" stroke="none" stroke-width="1" opacity="1"></circle>
+
+            <!-- "+" between sections -->
+            
+              <line x1="480" y1="530" x2="480" y2="536" stroke="#d9d2c2" stroke-width="1" stroke-linecap="round" opacity="1"></line>
+              <circle cx="480" cy="540" r="11" fill="#ffffff" stroke="#f43f5e" stroke-width="1.5" opacity="1"></circle>
+              <path d="M 474 540 h 12 m -6 -6 v 12" fill="none" stroke="#f43f5e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="1"></path>
+            
+          
+            <rect x="80" y="540" width="800" height="76" rx="14" fill="#ffffff" stroke="#d9d2c2" stroke-width="1" opacity="1"></rect>
+            <!-- drag dots -->
+            <circle cx="106" cy="564" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="114" cy="564" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="106" cy="572" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="114" cy="572" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="106" cy="580" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="114" cy="580" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle>
+            <!-- icon block -->
+            <rect x="140" y="552" width="80" height="52" rx="8" fill="#efe7d3" stroke="none" stroke-width="1" opacity="1"></rect>
+            <rect x="148" y="570" width="12" height="24" rx="2" fill="#5b6175" stroke="none" stroke-width="1" opacity="0.5"></rect><rect x="164" y="570" width="12" height="24" rx="2" fill="#5b6175" stroke="none" stroke-width="1" opacity="0.9"></rect><rect x="180" y="570" width="12" height="24" rx="2" fill="#5b6175" stroke="none" stroke-width="1" opacity="0.5"></rect><rect x="196" y="570" width="12" height="24" rx="2" fill="#5b6175" stroke="none" stroke-width="1" opacity="0.9"></rect>
+            <!-- name + meta -->
+            <rect x="240" y="558" width="200" height="12" rx="4" fill="#1c2030" stroke="none" stroke-width="1" opacity="0.9"></rect>
+            <rect x="240" y="578" width="240" height="6" rx="3" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></rect>
+            <rect x="240" y="590" width="180" height="6" rx="3" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></rect>
+            <!-- chip: type -->
+            <rect x="540" y="556" width="110" height="22" rx="11" fill="#efe7d3" stroke="none" stroke-width="1" opacity="1"></rect>
+            <rect x="556" y="564" width="76" height="6" rx="3" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+            <!-- chip: blocks -->
+            <rect x="540" y="586" width="50" height="18" rx="9" fill="#fbf8f1" stroke="#d9d2c2" stroke-width="1" opacity="1"></rect>
+            <rect x="550" y="592" width="30" height="5" rx="2" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+            <rect x="596" y="586" width="50" height="18" rx="9" fill="#fbf8f1" stroke="#d9d2c2" stroke-width="1" opacity="1"></rect>
+            <rect x="606" y="592" width="30" height="5" rx="2" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+            <!-- actions -->
+            <circle cx="700" cy="568" r="12" fill="none" stroke="#d9d2c2" stroke-width="1.5" opacity="1"></circle>
+            <rect x="692" y="566" width="16" height="4" rx="2" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+            <circle cx="736" cy="568" r="12" fill="none" stroke="#d9d2c2" stroke-width="1.5" opacity="1"></circle>
+            <path d="M 730 564 l 4 4 l 8 -8" fill="none" stroke="#f43f5e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="1"></path>
+            <circle cx="772" cy="568" r="12" fill="none" stroke="#d9d2c2" stroke-width="1.5" opacity="1"></circle>
+            <circle cx="770" cy="565" r="1.5" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></circle>
+            <circle cx="772" cy="565" r="1.5" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></circle>
+            <circle cx="774" cy="565" r="1.5" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></circle>
+
+            <!-- toggle -->
+            <rect x="820" y="558" width="40" height="22" rx="11" fill="#e3dccd" stroke="none" stroke-width="1" opacity="1"></rect>
+            <circle cx="832" cy="569" r="8" fill="#ffffff" stroke="none" stroke-width="1" opacity="1"></circle>
+
+            <!-- "+" between sections -->
+            
+              <line x1="480" y1="622" x2="480" y2="628" stroke="#d9d2c2" stroke-width="1" stroke-linecap="round" opacity="1"></line>
+              <circle cx="480" cy="632" r="11" fill="#ffffff" stroke="#f43f5e" stroke-width="1.5" opacity="1"></circle>
+              <path d="M 474 632 h 12 m -6 -6 v 12" fill="none" stroke="#f43f5e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="1"></path>
+            
+          
+            <rect x="80" y="632" width="800" height="76" rx="14" fill="#ffffff" stroke="#d9d2c2" stroke-width="1" opacity="1"></rect>
+            <!-- drag dots -->
+            <circle cx="106" cy="656" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="114" cy="656" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="106" cy="664" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="114" cy="664" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="106" cy="672" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="114" cy="672" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle>
+            <!-- icon block -->
+            <rect x="140" y="644" width="80" height="52" rx="8" fill="#efe7d3" stroke="none" stroke-width="1" opacity="1"></rect>
+            <rect x="148" y="662" width="64" height="4" rx="2" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect><rect x="148" y="672" width="50" height="4" rx="2" fill="#5b6175" stroke="none" stroke-width="1" opacity="0.6"></rect><rect x="148" y="682" width="56" height="4" rx="2" fill="#5b6175" stroke="none" stroke-width="1" opacity="0.6"></rect>
+            <!-- name + meta -->
+            <rect x="240" y="650" width="200" height="12" rx="4" fill="#1c2030" stroke="none" stroke-width="1" opacity="0.9"></rect>
+            <rect x="240" y="670" width="240" height="6" rx="3" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></rect>
+            <rect x="240" y="682" width="180" height="6" rx="3" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></rect>
+            <!-- chip: type -->
+            <rect x="540" y="648" width="110" height="22" rx="11" fill="#efe7d3" stroke="none" stroke-width="1" opacity="1"></rect>
+            <rect x="556" y="656" width="76" height="6" rx="3" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+            <!-- chip: blocks -->
+            <rect x="540" y="678" width="50" height="18" rx="9" fill="#fbf8f1" stroke="#d9d2c2" stroke-width="1" opacity="1"></rect>
+            <rect x="550" y="684" width="30" height="5" rx="2" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+            <rect x="596" y="678" width="50" height="18" rx="9" fill="#fbf8f1" stroke="#d9d2c2" stroke-width="1" opacity="1"></rect>
+            <rect x="606" y="684" width="30" height="5" rx="2" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+            <!-- actions -->
+            <circle cx="700" cy="660" r="12" fill="none" stroke="#d9d2c2" stroke-width="1.5" opacity="1"></circle>
+            <rect x="692" y="658" width="16" height="4" rx="2" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+            <circle cx="736" cy="660" r="12" fill="none" stroke="#d9d2c2" stroke-width="1.5" opacity="1"></circle>
+            <path d="M 730 656 l 4 4 l 8 -8" fill="none" stroke="#f43f5e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="1"></path>
+            <circle cx="772" cy="660" r="12" fill="none" stroke="#d9d2c2" stroke-width="1.5" opacity="1"></circle>
+            <circle cx="770" cy="657" r="1.5" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></circle>
+            <circle cx="772" cy="657" r="1.5" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></circle>
+            <circle cx="774" cy="657" r="1.5" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></circle>
+
+            <!-- toggle -->
+            <rect x="820" y="650" width="40" height="22" rx="11" fill="#e3dccd" stroke="none" stroke-width="1" opacity="1"></rect>
+            <circle cx="832" cy="661" r="8" fill="#ffffff" stroke="none" stroke-width="1" opacity="1"></circle>
+
+            <!-- "+" between sections -->
+            
+              <line x1="480" y1="714" x2="480" y2="720" stroke="#d9d2c2" stroke-width="1" stroke-linecap="round" opacity="1"></line>
+              <circle cx="480" cy="724" r="11" fill="#ffffff" stroke="#f43f5e" stroke-width="1.5" opacity="1"></circle>
+              <path d="M 474 724 h 12 m -6 -6 v 12" fill="none" stroke="#f43f5e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="1"></path>
+            
+          
+            <rect x="80" y="724" width="800" height="76" rx="14" fill="#ffffff" stroke="#d9d2c2" stroke-width="1" opacity="1"></rect>
+            <!-- drag dots -->
+            <circle cx="106" cy="748" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="114" cy="748" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="106" cy="756" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="114" cy="756" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="106" cy="764" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="114" cy="764" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle>
+            <!-- icon block -->
+            <rect x="140" y="736" width="80" height="52" rx="8" fill="#efe7d3" stroke="none" stroke-width="1" opacity="1"></rect>
+            <rect x="148" y="750" width="16" height="32" rx="3" fill="#5b6175" stroke="none" stroke-width="1" opacity="0.4"></rect><rect x="170" y="750" width="16" height="32" rx="3" fill="#5b6175" stroke="none" stroke-width="1" opacity="0.6000000000000001"></rect><rect x="192" y="750" width="16" height="32" rx="3" fill="#5b6175" stroke="none" stroke-width="1" opacity="0.8"></rect>
+            <!-- name + meta -->
+            <rect x="240" y="742" width="200" height="12" rx="4" fill="#1c2030" stroke="none" stroke-width="1" opacity="0.9"></rect>
+            <rect x="240" y="762" width="240" height="6" rx="3" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></rect>
+            <rect x="240" y="774" width="180" height="6" rx="3" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></rect>
+            <!-- chip: type -->
+            <rect x="540" y="740" width="110" height="22" rx="11" fill="#efe7d3" stroke="none" stroke-width="1" opacity="1"></rect>
+            <rect x="556" y="748" width="76" height="6" rx="3" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+            <!-- chip: blocks -->
+            <rect x="540" y="770" width="50" height="18" rx="9" fill="#fbf8f1" stroke="#d9d2c2" stroke-width="1" opacity="1"></rect>
+            <rect x="550" y="776" width="30" height="5" rx="2" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+            <rect x="596" y="770" width="50" height="18" rx="9" fill="#fbf8f1" stroke="#d9d2c2" stroke-width="1" opacity="1"></rect>
+            <rect x="606" y="776" width="30" height="5" rx="2" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+            <!-- actions -->
+            <circle cx="700" cy="752" r="12" fill="none" stroke="#d9d2c2" stroke-width="1.5" opacity="1"></circle>
+            <rect x="692" y="750" width="16" height="4" rx="2" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+            <circle cx="736" cy="752" r="12" fill="none" stroke="#d9d2c2" stroke-width="1.5" opacity="1"></circle>
+            <path d="M 730 748 l 4 4 l 8 -8" fill="none" stroke="#f43f5e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="1"></path>
+            <circle cx="772" cy="752" r="12" fill="none" stroke="#d9d2c2" stroke-width="1.5" opacity="1"></circle>
+            <circle cx="770" cy="749" r="1.5" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></circle>
+            <circle cx="772" cy="749" r="1.5" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></circle>
+            <circle cx="774" cy="749" r="1.5" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></circle>
+
+            <!-- toggle -->
+            <rect x="820" y="742" width="40" height="22" rx="11" fill="#e3dccd" stroke="none" stroke-width="1" opacity="1"></rect>
+            <circle cx="832" cy="753" r="8" fill="#ffffff" stroke="none" stroke-width="1" opacity="1"></circle>
+
+            <!-- "+" between sections -->
+            
+              <line x1="480" y1="806" x2="480" y2="812" stroke="#d9d2c2" stroke-width="1" stroke-linecap="round" opacity="1"></line>
+              <circle cx="480" cy="816" r="11" fill="#ffffff" stroke="#f43f5e" stroke-width="1.5" opacity="1"></circle>
+              <path d="M 474 816 h 12 m -6 -6 v 12" fill="none" stroke="#f43f5e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="1"></path>
+            
+          
+            <rect x="80" y="816" width="800" height="76" rx="14" fill="#ffffff" stroke="#d9d2c2" stroke-width="1" opacity="1"></rect>
+            <!-- drag dots -->
+            <circle cx="106" cy="840" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="114" cy="840" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="106" cy="848" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="114" cy="848" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="106" cy="856" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="114" cy="856" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle>
+            <!-- icon block -->
+            <rect x="140" y="828" width="80" height="52" rx="8" fill="#efe7d3" stroke="none" stroke-width="1" opacity="1"></rect>
+            <rect x="148" y="850" width="64" height="16" rx="3" fill="#5b6175" stroke="none" stroke-width="1" opacity="0.5"></rect><path d="M 148 850 L 180 862 L 212 850" fill="none" stroke="#5b6175" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="1"></path>
+            <!-- name + meta -->
+            <rect x="240" y="834" width="200" height="12" rx="4" fill="#1c2030" stroke="none" stroke-width="1" opacity="0.9"></rect>
+            <rect x="240" y="854" width="240" height="6" rx="3" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></rect>
+            <rect x="240" y="866" width="180" height="6" rx="3" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></rect>
+            <!-- chip: type -->
+            <rect x="540" y="832" width="110" height="22" rx="11" fill="#efe7d3" stroke="none" stroke-width="1" opacity="1"></rect>
+            <rect x="556" y="840" width="76" height="6" rx="3" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+            <!-- chip: blocks -->
+            <rect x="540" y="862" width="50" height="18" rx="9" fill="#fbf8f1" stroke="#d9d2c2" stroke-width="1" opacity="1"></rect>
+            <rect x="550" y="868" width="30" height="5" rx="2" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+            <rect x="596" y="862" width="50" height="18" rx="9" fill="#fbf8f1" stroke="#d9d2c2" stroke-width="1" opacity="1"></rect>
+            <rect x="606" y="868" width="30" height="5" rx="2" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+            <!-- actions -->
+            <circle cx="700" cy="844" r="12" fill="none" stroke="#d9d2c2" stroke-width="1.5" opacity="1"></circle>
+            <rect x="692" y="842" width="16" height="4" rx="2" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+            <circle cx="736" cy="844" r="12" fill="none" stroke="#d9d2c2" stroke-width="1.5" opacity="1"></circle>
+            <path d="M 730 840 l 4 4 l 8 -8" fill="none" stroke="#f43f5e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="1"></path>
+            <circle cx="772" cy="844" r="12" fill="none" stroke="#d9d2c2" stroke-width="1.5" opacity="1"></circle>
+            <circle cx="770" cy="841" r="1.5" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></circle>
+            <circle cx="772" cy="841" r="1.5" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></circle>
+            <circle cx="774" cy="841" r="1.5" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></circle>
+
+            <!-- toggle -->
+            <rect x="820" y="834" width="40" height="22" rx="11" fill="#e3dccd" stroke="none" stroke-width="1" opacity="1"></rect>
+            <circle cx="832" cy="845" r="8" fill="#ffffff" stroke="none" stroke-width="1" opacity="1"></circle>
+
+            <!-- "+" between sections -->
+            
+              <line x1="480" y1="898" x2="480" y2="904" stroke="#d9d2c2" stroke-width="1" stroke-linecap="round" opacity="1"></line>
+              <circle cx="480" cy="908" r="11" fill="#ffffff" stroke="#f43f5e" stroke-width="1.5" opacity="1"></circle>
+              <path d="M 474 908 h 12 m -6 -6 v 12" fill="none" stroke="#f43f5e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="1"></path>
+            
+          
+            <rect x="80" y="908" width="800" height="76" rx="14" fill="#ffffff" stroke="#d9d2c2" stroke-width="1" opacity="1"></rect>
+            <!-- drag dots -->
+            <circle cx="106" cy="932" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="114" cy="932" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="106" cy="940" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="114" cy="940" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="106" cy="948" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle><circle cx="114" cy="948" r="2" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></circle>
+            <!-- icon block -->
+            <rect x="140" y="920" width="80" height="52" rx="8" fill="#efe7d3" stroke="none" stroke-width="1" opacity="1"></rect>
+            <rect x="148" y="934" width="30" height="4" rx="2" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect><rect x="148" y="944" width="64" height="3" rx="1" fill="#5b6175" stroke="none" stroke-width="1" opacity="0.4"></rect><rect x="148" y="952" width="50" height="3" rx="1" fill="#5b6175" stroke="none" stroke-width="1" opacity="0.4"></rect><rect x="148" y="960" width="56" height="3" rx="1" fill="#5b6175" stroke="none" stroke-width="1" opacity="0.4"></rect>
+            <!-- name + meta -->
+            <rect x="240" y="926" width="200" height="12" rx="4" fill="#1c2030" stroke="none" stroke-width="1" opacity="0.9"></rect>
+            <rect x="240" y="946" width="240" height="6" rx="3" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></rect>
+            <rect x="240" y="958" width="180" height="6" rx="3" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></rect>
+            <!-- chip: type -->
+            <rect x="540" y="924" width="110" height="22" rx="11" fill="#efe7d3" stroke="none" stroke-width="1" opacity="1"></rect>
+            <rect x="556" y="932" width="76" height="6" rx="3" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+            <!-- chip: blocks -->
+            <rect x="540" y="954" width="50" height="18" rx="9" fill="#fbf8f1" stroke="#d9d2c2" stroke-width="1" opacity="1"></rect>
+            <rect x="550" y="960" width="30" height="5" rx="2" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+            <rect x="596" y="954" width="50" height="18" rx="9" fill="#fbf8f1" stroke="#d9d2c2" stroke-width="1" opacity="1"></rect>
+            <rect x="606" y="960" width="30" height="5" rx="2" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+            <!-- actions -->
+            <circle cx="700" cy="936" r="12" fill="none" stroke="#d9d2c2" stroke-width="1.5" opacity="1"></circle>
+            <rect x="692" y="934" width="16" height="4" rx="2" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></rect>
+            <circle cx="736" cy="936" r="12" fill="none" stroke="#d9d2c2" stroke-width="1.5" opacity="1"></circle>
+            <path d="M 730 932 l 4 4 l 8 -8" fill="none" stroke="#f43f5e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="1"></path>
+            <circle cx="772" cy="936" r="12" fill="none" stroke="#d9d2c2" stroke-width="1.5" opacity="1"></circle>
+            <circle cx="770" cy="933" r="1.5" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></circle>
+            <circle cx="772" cy="933" r="1.5" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></circle>
+            <circle cx="774" cy="933" r="1.5" fill="#5b6175" stroke="none" stroke-width="1" opacity="1"></circle>
+
+            <!-- toggle -->
+            <rect x="820" y="926" width="40" height="22" rx="11" fill="#e3dccd" stroke="none" stroke-width="1" opacity="1"></rect>
+            <circle cx="832" cy="937" r="8" fill="#ffffff" stroke="none" stroke-width="1" opacity="1"></circle>
+
+            <!-- "+" between sections -->
+            
+          
+
+      <!-- bottom legend / template label -->
+      <rect x="80" y="1010" width="800" height="60" rx="12" fill="#fbf8f1" stroke="#d9d2c2" stroke-width="1" opacity="1"></rect>
+      <rect x="98" y="1024" width="14" height="32" rx="3" fill="#f43f5e" stroke="none" stroke-width="1" opacity="1"></rect>
+      <rect x="124" y="1024" width="200" height="12" rx="5" fill="#1c2030" stroke="none" stroke-width="1" opacity="0.9"></rect>
+      <rect x="124" y="1044" width="240" height="6" rx="3" fill="#9ba2b3" stroke="none" stroke-width="1" opacity="1"></rect>
+      <rect x="700" y="1024" width="160" height="32" rx="16" fill="#1c2030" stroke="none" stroke-width="1" opacity="1"></rect>
+      <rect x="736" y="1036" width="90" height="8" rx="4" fill="#ffffff" stroke="none" stroke-width="1" opacity="0.95"></rect>
+    </svg>
