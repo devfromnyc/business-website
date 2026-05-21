@@ -208,31 +208,62 @@
       "imageUrl": "https://images.unsplash.com/photo-1526738549149-8e07eca6c147?auto=format&fit=crop&w=900&q=80",
       "description": "As the object rotates, each service focus appears with a clear value proposition."
     },
-    "servicesGrid": {
-      "eyebrow": "Engineering services",
-      "title": "Your project roadmap.",
+    "shopifyRoadmap": {
+      "eyebrow": "Shopify",
+      "title": "Your Shopify roadmap.",
       "paragraphSegments": [
         { "text": "From " },
-        { "text": "Shopify storefront work", "emphasis": true },
+        { "text": "theme sections merchants can run", "emphasis": true },
         { "text": " to " },
-        { "text": "fullstack apps and consulting", "emphasis": true },
-        { "text": " — here is how engagements typically unfold." }
+        { "text": "apps and integrations", "emphasis": true },
+        { "text": " — how storefront work typically unfolds." }
       ],
       "steps": [
         {
-          "label": "01 · SHOPIFY ECOMMERCE",
-          "description": "Store setup, theme customization, and checkout improvements that support revenue.",
+          "label": "01 · THEME & SECTIONS",
+          "description": "Reusable sections, calmer customizer controls, and layouts your team can update without filing a ticket every campaign.",
+          "imageKey": "portfolioIllustration21"
+        },
+        {
+          "label": "02 · LIQUID & METAFIELDS",
+          "description": "Structured Liquid, JSON templates, and metafield-driven blocks that stay fast and easier to maintain when Shopify ships changes.",
           "imageKey": "portfolioIllustration13"
         },
         {
-          "label": "02 · FULLSTACK & APPS",
-          "description": "End-to-end builds with modern React and Node.js stacks, including Shopify apps.",
+          "label": "03 · APPS & INTEGRATIONS",
+          "description": "Custom Shopify apps, admin tooling, and stable integrations when the theme editor alone is not enough.",
+          "imageKey": "portfolioIllustration17"
+        }
+      ],
+      "cycleIntervalMs": 4000
+    },
+    "otherServicesRoadmap": {
+      "eyebrow": "Engineering services",
+      "title": "Your project roadmap.",
+      "paragraphSegments": [
+        { "text": "Beyond the storefront — " },
+        { "text": "fullstack delivery", "emphasis": true },
+        { "text": ", " },
+        { "text": "consulting", "emphasis": true },
+        { "text": ", and " },
+        { "text": "performance & accessibility", "emphasis": true },
+        { "text": " when your stack needs broader support." }
+      ],
+      "steps": [
+        {
+          "label": "01 · FULLSTACK & APPS",
+          "description": "End-to-end web and app development with modern React and Node.js stacks, including non-Shopify products.",
           "imageKey": "portfolioIllustration14"
         },
         {
-          "label": "03 · TECHNICAL CONSULTING",
-          "description": "Hands-on support for architecture, delivery, integrations, and long-term maintainability.",
-          "imageKey": "portfolioIllustration15"
+          "label": "02 · TECHNICAL CONSULTING",
+          "description": "Architecture, delivery process, and integration guidance so your team ships with less friction.",
+          "imageKey": "portfolioIllustration19"
+        },
+        {
+          "label": "03 · PERFORMANCE & A11Y",
+          "description": "Core Web Vitals tuning and practical accessibility fixes your team can maintain after launch.",
+          "imageKey": "portfolioIllustration20"
         }
       ],
       "cycleIntervalMs": 4000

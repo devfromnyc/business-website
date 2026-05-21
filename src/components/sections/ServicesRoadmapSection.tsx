@@ -2,23 +2,29 @@
 
 import Image, { StaticImageData } from "next/image";
 import { Fragment, useEffect, useState } from "react";
+import portfolioIllustration12 from "@/assets/portfolio-illustration-12.svg";
 import portfolioIllustration13 from "@/assets/portfolio-illustration-13.svg";
 import portfolioIllustration14 from "@/assets/portfolio-illustration-14.svg";
 import portfolioIllustration15 from "@/assets/portfolio-illustration-15.svg";
-import siteContent from "@/data/site-content.json";
+import portfolioIllustration16 from "@/assets/portfolio-illustration-16.svg";
+import portfolioIllustration17 from "@/assets/portfolio-illustration-17.svg";
+import portfolioIllustration18 from "@/assets/portfolio-illustration-18.svg";
+import portfolioIllustration19 from "@/assets/portfolio-illustration-19.svg";
+import portfolioIllustration20 from "@/assets/portfolio-illustration-20.svg";
+import portfolioIllustration21 from "@/assets/portfolio-illustration-21.svg";
 
-type ParagraphSegment = {
+export type ParagraphSegment = {
   text: string;
   emphasis?: boolean;
 };
 
-type ServiceStep = {
+export type ServiceStep = {
   label: string;
   description: string;
   imageKey: string;
 };
 
-type ServicesGridContent = {
+export type ServicesRoadmapContent = {
   eyebrow: string;
   title: string;
   paragraphSegments: ParagraphSegment[];
@@ -26,12 +32,17 @@ type ServicesGridContent = {
   cycleIntervalMs?: number;
 };
 
-const servicesGrid = siteContent.homepage.servicesGrid as ServicesGridContent;
-
 const illustrationByKey: Record<string, StaticImageData> = {
+  portfolioIllustration12,
   portfolioIllustration13,
   portfolioIllustration14,
   portfolioIllustration15,
+  portfolioIllustration16,
+  portfolioIllustration17,
+  portfolioIllustration18,
+  portfolioIllustration19,
+  portfolioIllustration20,
+  portfolioIllustration21,
 };
 
 function illustrationForKey(key: string): StaticImageData {
@@ -48,12 +59,24 @@ function FlowArrow() {
   );
 }
 
-export default function ServicesGridSection() {
+type ServicesRoadmapSectionProps = {
+  content: ServicesRoadmapContent;
+  sectionId?: string;
+  headingId: string;
+  variant?: "default" | "alt";
+};
+
+export default function ServicesRoadmapSection({
+  content,
+  sectionId,
+  headingId,
+  variant = "default",
+}: ServicesRoadmapSectionProps) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const cycleMs = servicesGrid.cycleIntervalMs ?? 4000;
+  const cycleMs = content.cycleIntervalMs ?? 4000;
+  const stepCount = content.steps.length;
 
   useEffect(() => {
-    const stepCount = servicesGrid.steps.length;
     if (stepCount <= 1) return;
 
     const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -64,25 +87,30 @@ export default function ServicesGridSection() {
     }, cycleMs);
 
     return () => window.clearInterval(id);
-  }, [cycleMs]);
+  }, [cycleMs, stepCount]);
+
+  const bgClass =
+    variant === "alt"
+      ? "bg-brand-sand-mid"
+      : "bg-brand-paper-strong";
 
   return (
     <section
-      id="services"
-      className="relative left-1/2 w-screen -translate-x-1/2 scroll-mt-24 bg-brand-paper-strong text-brand-ink"
-      aria-labelledby="services-grid-heading">
+      id={sectionId}
+      className={`relative left-1/2 w-screen -translate-x-1/2 scroll-mt-24 text-brand-ink ${bgClass}`}
+      aria-labelledby={headingId}>
       <div className="mx-auto w-full max-w-6xl px-6 py-12 md:px-10 md:py-16">
         <header className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center">
           <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-brand-accent">
-            {servicesGrid.eyebrow}
+            {content.eyebrow}
           </p>
           <h2
-            id="services-grid-heading"
+            id={headingId}
             className="text-3xl font-bold tracking-tight text-brand-ink md:text-4xl lg:text-[2.75rem] lg:leading-tight">
-            {servicesGrid.title}
+            {content.title}
           </h2>
           <p className="text-base leading-relaxed text-brand-muted md:text-lg">
-            {servicesGrid.paragraphSegments.map((segment, index) =>
+            {content.paragraphSegments.map((segment, index) =>
               segment.emphasis ? (
                 <span
                   key={`${segment.text}-${index}`}
@@ -97,7 +125,7 @@ export default function ServicesGridSection() {
         </header>
 
         <div className="mt-12 flex flex-col items-stretch gap-10 md:mt-16 md:flex-row md:items-start md:justify-center md:gap-6 lg:gap-8">
-          {servicesGrid.steps.map((step, index) => {
+          {content.steps.map((step, index) => {
             const isActive = activeIndex === index;
             const illustration = illustrationForKey(step.imageKey);
 
@@ -125,10 +153,10 @@ export default function ServicesGridSection() {
                   </div>
 
                   <div
-                    className={`relative mt-1 aspect-[4/3] w-full overflow-hidden rounded-xl border transition-[box-shadow,opacity,border-color] duration-500 ${
+                    className={`relative mt-1 aspect-4/3 w-full overflow-hidden rounded-xl border transition-[box-shadow,opacity,border-color] duration-500 ${
                       isActive
                         ? "border-brand-accent/40 bg-brand-paper opacity-100 shadow-[0_0_0_1px_rgb(251_146_60/0.25),0_8px_32px_rgb(251_146_60/0.22)]"
-                        : "border-brand-border/80 bg-brand-sand-mid/50 opacity-55 shadow-none"
+                        : "border-brand-border/80 bg-brand-paper/80 opacity-55 shadow-none"
                     }`}>
                     <Image
                       src={illustration}
