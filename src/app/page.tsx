@@ -9,8 +9,6 @@ import PricingSection from "@/components/sections/PricingSection";
 import SkillsShowcase from "@/components/sections/SkillsShowcase";
 import siteContent from "@/data/site-content.json";
 
-const shopifyRoadmap = siteContent.homepage
-  .shopifyRoadmap as ServicesRoadmapContent;
 const otherServicesRoadmap = siteContent.homepage
   .otherServicesRoadmap as ServicesRoadmapContent;
 
@@ -24,15 +22,9 @@ export default function Home() {
 
       <div className="mt-16 flex w-full flex-col">
         <ServicesRoadmapSection
-          sectionId="shopify"
-          headingId="shopify-roadmap-heading"
-          content={shopifyRoadmap}
-        />
-        <ServicesRoadmapSection
           sectionId="services"
           headingId="services-roadmap-heading"
           content={otherServicesRoadmap}
-          variant="alt"
         />
       </div>
 
