@@ -264,9 +264,25 @@
           "label": "03 · PERFORMANCE & A11Y",
           "description": "Core Web Vitals tuning and practical accessibility fixes your team can maintain after launch.",
           "imageKey": "portfolioIllustration20"
+        },
+        {
+          "label": "04 · PAGE SPEED",
+          "description": "Core Web Vitals improvements, bundle and image tuning, and measurable gains on key templates.",
+          "imageKey": "portfolioIllustration16"
+        },
+        {
+          "label": "05 · WEB ACCESSIBILITY",
+          "description": "WCAG-focused reviews and remediation on checkout, catalog, and marketing journeys your team can own.",
+          "imageKey": "portfolioIllustration18"
+        },
+        {
+          "label": "06 · SHOPIFY ECOMMERCE",
+          "description": "Store setup, theme customization, checkout flow, and UX improvements that support conversion.",
+          "imageKey": "portfolioIllustration15"
         }
       ],
-      "cycleIntervalMs": 4000
+      "cycleIntervalMs": 4000,
+      "scrollPinStepVh": 80
     },
     "skillsSection": {
       "eyebrow": "The stack behind the work",

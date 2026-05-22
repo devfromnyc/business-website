@@ -1,7 +1,7 @@
 "use client";
 
 import Image, { StaticImageData } from "next/image";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import portfolioIllustration12 from "@/assets/portfolio-illustration-12.svg";
 import portfolioIllustration13 from "@/assets/portfolio-illustration-13.svg";
 import portfolioIllustration14 from "@/assets/portfolio-illustration-14.svg";
@@ -30,6 +30,8 @@ export type ServicesRoadmapContent = {
   paragraphSegments: ParagraphSegment[];
   steps: ServiceStep[];
   cycleIntervalMs?: number;
+  /** Viewport heights of scroll runway per step when pinning (>3 tiles). */
+  scrollPinStepVh?: number;
 };
 
 const illustrationByKey: Record<string, StaticImageData> = {
@@ -45,6 +47,9 @@ const illustrationByKey: Record<string, StaticImageData> = {
   portfolioIllustration21,
 };
 
+const PIN_THRESHOLD = 3;
+const VISIBLE_TILES_MD = 3;
+
 function illustrationForKey(key: string): StaticImageData {
   return illustrationByKey[key] ?? portfolioIllustration13;
 }
@@ -56,6 +61,183 @@ function FlowArrow() {
       aria-hidden>
       →
     </span>
+  );
+}
+
+function RoadmapHeader({
+  content,
+  headingId,
+  scrollHint,
+}: {
+  content: ServicesRoadmapContent;
+  headingId: string;
+  scrollHint?: boolean;
+}) {
+  return (
+    <header className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center">
+      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-brand-accent">
+        {content.eyebrow}
+      </p>
+      <h2
+        id={headingId}
+        className="text-3xl font-bold tracking-tight text-brand-ink md:text-4xl lg:text-[2.75rem] lg:leading-tight">
+        {content.title}
+      </h2>
+      <p className="text-base leading-relaxed text-brand-muted md:text-lg">
+        {content.paragraphSegments.map((segment, index) =>
+          segment.emphasis ? (
+            <span
+              key={`${segment.text}-${index}`}
+              className="font-semibold text-brand-ink">
+              {segment.text}
+            </span>
+          ) : (
+            <span key={`${segment.text}-${index}`}>{segment.text}</span>
+          ),
+        )}
+      </p>
+      {scrollHint ? (
+        <p className="text-xs font-medium uppercase tracking-[0.14em] text-brand-muted-light">
+          Scroll to explore each service
+        </p>
+      ) : null}
+    </header>
+  );
+}
+
+function ServiceTile({
+  step,
+  illustration,
+  isActive,
+}: {
+  step: ServiceStep;
+  illustration: StaticImageData;
+  isActive: boolean;
+}) {
+  return (
+    <article
+      className="flex min-w-0 flex-1 flex-col gap-4"
+      aria-current={isActive ? "step" : undefined}>
+      <div className="flex flex-col gap-2 transition-colors duration-500">
+        <p
+          className={`font-mono text-[11px] font-medium uppercase tracking-[0.12em] transition-colors duration-500 ${
+            isActive ? "text-brand-ink" : "text-brand-muted-light"
+          }`}>
+          {step.label}
+        </p>
+        <p
+          className={`text-sm leading-snug transition-colors duration-500 md:text-[15px] ${
+            isActive ? "font-medium text-brand-ink" : "text-brand-muted"
+          }`}>
+          {step.description}
+        </p>
+      </div>
+
+      <div
+        className={`relative mt-1 aspect-4/3 w-full overflow-hidden rounded-xl border transition-[box-shadow,opacity,border-color] duration-500 ${
+          isActive
+            ? "border-brand-accent/40 bg-brand-paper opacity-100 shadow-[0_0_0_1px_rgb(251_146_60/0.25),0_8px_32px_rgb(251_146_60/0.22)]"
+            : "border-brand-border/80 bg-brand-paper/80 opacity-55 shadow-none"
+        }`}>
+        <Image
+          src={illustration}
+          alt=""
+          fill
+          className="object-contain p-3 md:p-4"
+          sizes="(min-width: 768px) 33vw, 85vw"
+          unoptimized
+        />
+      </div>
+    </article>
+  );
+}
+
+function ProgressDots({
+  count,
+  activeIndex,
+}: {
+  count: number;
+  activeIndex: number;
+}) {
+  return (
+    <div
+      className="mt-8 flex justify-center gap-2"
+      role="tablist"
+      aria-label="Service progress">
+      {Array.from({ length: count }, (_, index) => (
+        <span
+          key={index}
+          role="tab"
+          aria-selected={activeIndex === index}
+          className={`h-1.5 rounded-full transition-all duration-300 ${
+            activeIndex === index
+              ? "w-6 bg-brand-accent"
+              : "w-1.5 bg-brand-border"
+          }`}
+        />
+      ))}
+    </div>
+  );
+}
+
+function PinnedServicesCarousel({
+  steps,
+  scrollProgress,
+  activeIndex,
+}: {
+  steps: ServiceStep[];
+  scrollProgress: number;
+  activeIndex: number;
+}) {
+  const viewportRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [maxOffset, setMaxOffset] = useState(0);
+
+  const measureTrack = useCallback(() => {
+    const viewport = viewportRef.current;
+    const track = trackRef.current;
+    if (!viewport || !track) return;
+    setMaxOffset(Math.max(0, track.scrollWidth - viewport.clientWidth));
+  }, []);
+
+  useLayoutEffect(() => {
+    measureTrack();
+  }, [measureTrack, steps.length]);
+
+  useEffect(() => {
+    window.addEventListener("resize", measureTrack);
+    return () => window.removeEventListener("resize", measureTrack);
+  }, [measureTrack]);
+
+  const translateX = -scrollProgress * maxOffset;
+
+  return (
+    <div
+      ref={viewportRef}
+      className="mt-12 w-full overflow-hidden md:mt-16">
+      <div
+        ref={trackRef}
+        className="flex w-max items-start gap-6 will-change-transform lg:gap-8"
+        style={{ transform: `translate3d(${translateX}px, 0, 0)` }}>
+        {steps.map((step, index) => {
+          const illustration = illustrationForKey(step.imageKey);
+          const isActive = activeIndex === index;
+
+          return (
+            <Fragment key={step.label}>
+              {index > 0 ? <FlowArrow /> : null}
+              <div className="flex w-[min(85vw,340px)] shrink-0 flex-col md:w-[340px] md:max-w-[340px]">
+                <ServiceTile
+                  step={step}
+                  illustration={illustration}
+                  isActive={isActive}
+                />
+              </div>
+            </Fragment>
+          );
+        })}
+      </div>
+    </div>
   );
 }
 
@@ -72,12 +254,69 @@ export default function ServicesRoadmapSection({
   headingId,
   variant = "default",
 }: ServicesRoadmapSectionProps) {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const cycleMs = content.cycleIntervalMs ?? 4000;
   const stepCount = content.steps.length;
+  const useScrollPin = stepCount > PIN_THRESHOLD;
+  const scrollPinStepVh = content.scrollPinStepVh ?? 80;
+
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const pinContainerRef = useRef<HTMLDivElement>(null);
+  const cycleMs = content.cycleIntervalMs ?? 4000;
+
+  const updateScrollFromPin = useCallback(() => {
+    const container = pinContainerRef.current;
+    if (!container || stepCount <= 1) return;
+
+    const rect = container.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+    const scrollableDistance = container.offsetHeight - viewportHeight;
+
+    if (scrollableDistance <= 0) {
+      setScrollProgress(0);
+      setActiveIndex(0);
+      return;
+    }
+
+    if (rect.top > 0) {
+      setScrollProgress(0);
+      setActiveIndex(0);
+      return;
+    }
+
+    if (rect.bottom <= viewportHeight) {
+      setScrollProgress(1);
+      setActiveIndex(stepCount - 1);
+      return;
+    }
+
+    const progress = Math.min(1, Math.max(0, -rect.top / scrollableDistance));
+    setScrollProgress(progress);
+
+    const isWide = window.matchMedia("(min-width: 768px)").matches;
+    const visibleSlots = isWide
+      ? Math.min(VISIBLE_TILES_MD, stepCount)
+      : 1;
+    const maxFocusIndex = Math.max(0, stepCount - visibleSlots);
+    const focusProgress = progress * maxFocusIndex;
+    const nextIndex = Math.round(focusProgress);
+    setActiveIndex(Math.min(stepCount - 1, nextIndex));
+  }, [stepCount]);
 
   useEffect(() => {
-    if (stepCount <= 1) return;
+    if (!useScrollPin) return;
+
+    updateScrollFromPin();
+    window.addEventListener("scroll", updateScrollFromPin, { passive: true });
+    window.addEventListener("resize", updateScrollFromPin);
+
+    return () => {
+      window.removeEventListener("scroll", updateScrollFromPin);
+      window.removeEventListener("resize", updateScrollFromPin);
+    };
+  }, [useScrollPin, updateScrollFromPin]);
+
+  useEffect(() => {
+    if (useScrollPin || stepCount <= 1) return;
 
     const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (motionQuery.matches) return;
@@ -87,12 +326,42 @@ export default function ServicesRoadmapSection({
     }, cycleMs);
 
     return () => window.clearInterval(id);
-  }, [cycleMs, stepCount]);
+  }, [cycleMs, stepCount, useScrollPin]);
 
   const bgClass =
-    variant === "alt"
-      ? "bg-brand-sand-mid"
-      : "bg-brand-paper-strong";
+    variant === "alt" ? "bg-brand-sand-mid" : "bg-brand-paper-strong";
+
+  if (useScrollPin) {
+    const pinHeightVh = stepCount * scrollPinStepVh;
+
+    return (
+      <div
+        ref={pinContainerRef}
+        className="relative left-1/2 w-screen -translate-x-1/2"
+        style={{ height: `${pinHeightVh}vh` }}>
+        <section
+          id={sectionId}
+          className={`sticky top-0 flex min-h-dvh scroll-mt-24 flex-col justify-center text-brand-ink ${bgClass}`}
+          aria-labelledby={headingId}>
+          <div className="mx-auto w-full max-w-6xl px-6 py-10 md:px-10 md:py-12">
+            <RoadmapHeader
+              content={content}
+              headingId={headingId}
+              scrollHint
+            />
+
+            <PinnedServicesCarousel
+              steps={content.steps}
+              scrollProgress={scrollProgress}
+              activeIndex={activeIndex}
+            />
+
+            <ProgressDots count={stepCount} activeIndex={activeIndex} />
+          </div>
+        </section>
+      </div>
+    );
+  }
 
   return (
     <section
@@ -100,29 +369,7 @@ export default function ServicesRoadmapSection({
       className={`relative left-1/2 w-screen -translate-x-1/2 scroll-mt-24 text-brand-ink ${bgClass}`}
       aria-labelledby={headingId}>
       <div className="mx-auto w-full max-w-6xl px-6 py-12 md:px-10 md:py-16">
-        <header className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-brand-accent">
-            {content.eyebrow}
-          </p>
-          <h2
-            id={headingId}
-            className="text-3xl font-bold tracking-tight text-brand-ink md:text-4xl lg:text-[2.75rem] lg:leading-tight">
-            {content.title}
-          </h2>
-          <p className="text-base leading-relaxed text-brand-muted md:text-lg">
-            {content.paragraphSegments.map((segment, index) =>
-              segment.emphasis ? (
-                <span
-                  key={`${segment.text}-${index}`}
-                  className="font-semibold text-brand-ink">
-                  {segment.text}
-                </span>
-              ) : (
-                <span key={`${segment.text}-${index}`}>{segment.text}</span>
-              ),
-            )}
-          </p>
-        </header>
+        <RoadmapHeader content={content} headingId={headingId} />
 
         <div className="mt-12 flex flex-col items-stretch gap-10 md:mt-16 md:flex-row md:items-start md:justify-center md:gap-6 lg:gap-8">
           {content.steps.map((step, index) => {
@@ -132,42 +379,13 @@ export default function ServicesRoadmapSection({
             return (
               <Fragment key={step.label}>
                 {index > 0 ? <FlowArrow /> : null}
-                <article
-                  className="flex min-w-0 flex-1 flex-col gap-4 md:max-w-[340px] lg:max-w-none"
-                  aria-current={isActive ? "step" : undefined}>
-                  <div className="flex flex-col gap-2 transition-colors duration-500">
-                    <p
-                      className={`font-mono text-[11px] font-medium uppercase tracking-[0.12em] transition-colors duration-500 ${
-                        isActive ? "text-brand-ink" : "text-brand-muted-light"
-                      }`}>
-                      {step.label}
-                    </p>
-                    <p
-                      className={`text-sm leading-snug transition-colors duration-500 md:text-[15px] ${
-                        isActive
-                          ? "font-medium text-brand-ink"
-                          : "text-brand-muted"
-                      }`}>
-                      {step.description}
-                    </p>
-                  </div>
-
-                  <div
-                    className={`relative mt-1 aspect-4/3 w-full overflow-hidden rounded-xl border transition-[box-shadow,opacity,border-color] duration-500 ${
-                      isActive
-                        ? "border-brand-accent/40 bg-brand-paper opacity-100 shadow-[0_0_0_1px_rgb(251_146_60/0.25),0_8px_32px_rgb(251_146_60/0.22)]"
-                        : "border-brand-border/80 bg-brand-paper/80 opacity-55 shadow-none"
-                    }`}>
-                    <Image
-                      src={illustration}
-                      alt=""
-                      fill
-                      className="object-contain p-3 md:p-4"
-                      sizes="(min-width: 768px) 33vw, 100vw"
-                      unoptimized
-                    />
-                  </div>
-                </article>
+                <div className="flex min-w-0 flex-1 flex-col md:max-w-[340px] lg:max-w-none">
+                  <ServiceTile
+                    step={step}
+                    illustration={illustration}
+                    isActive={isActive}
+                  />
+                </div>
               </Fragment>
             );
           })}
