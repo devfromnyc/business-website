@@ -67,11 +67,9 @@ function FlowArrow() {
 function RoadmapHeader({
   content,
   headingId,
-  scrollHint,
 }: {
   content: ServicesRoadmapContent;
   headingId: string;
-  scrollHint?: boolean;
 }) {
   return (
     <header className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center">
@@ -96,11 +94,6 @@ function RoadmapHeader({
           ),
         )}
       </p>
-      {scrollHint ? (
-        <p className="text-xs font-medium uppercase tracking-[0.14em] text-brand-muted-light">
-          Scroll to explore each service
-        </p>
-      ) : null}
     </header>
   );
 }
@@ -214,7 +207,7 @@ function PinnedServicesCarousel({
   return (
     <div
       ref={viewportRef}
-      className="mt-12 w-full overflow-hidden md:mt-16">
+      className="mt-6 w-full overflow-hidden md:mt-8">
       <div
         ref={trackRef}
         className="flex w-max items-start gap-6 will-change-transform lg:gap-8"
@@ -349,7 +342,6 @@ export default function ServicesRoadmapSection({
             <RoadmapHeader
               content={content}
               headingId={headingId}
-              scrollHint
             />
 
             <PinnedServicesCarousel
@@ -373,7 +365,7 @@ export default function ServicesRoadmapSection({
       <div className="mx-auto w-full max-w-6xl px-6 py-12 md:px-10 md:py-16">
         <RoadmapHeader content={content} headingId={headingId} />
 
-        <div className="mt-12 flex flex-col items-stretch gap-10 md:mt-16 md:flex-row md:items-start md:justify-center md:gap-6 lg:gap-8">
+        <div className="mt-6 flex flex-col items-stretch gap-10 md:mt-8 md:flex-row md:items-start md:justify-center md:gap-6 lg:gap-8">
           {content.steps.map((step, index) => {
             const isActive = activeIndex === index;
             const illustration = illustrationForKey(step.imageKey);

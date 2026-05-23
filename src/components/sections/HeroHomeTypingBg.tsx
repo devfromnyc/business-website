@@ -174,11 +174,11 @@ export default function HeroHomeTypingBg({
             {hero.badge ?? "Shopify + Fullstack Partner"}
           </span>
 
-          <h1 className="max-w-[725px] min-h-[135px] text-4xl font-bold leading-tight text-brand-paper md:min-h-[180px] md:text-5xl">
+          <h1 className="max-w-[725px] min-h-[135px] text-4xl font-bold leading-[1.2] text-brand-paper md:min-h-[130px]">
             <span className="sr-only">{heading}</span>
             <span aria-hidden="true">
               {headingVisible}
-              {typingHeading ? typingCursor("h-[36px] md:h-[48px]") : null}
+              {typingHeading ? typingCursor("h-[2.25rem]") : null}
             </span>
           </h1>
 
