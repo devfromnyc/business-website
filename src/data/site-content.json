@@ -4,9 +4,13 @@
     "tagline": "Fullstack Web Developer | Shopify Specialist"
   },
   "hero": {
+    "badge": "Shopify + Fullstack Partner",
     "heading": "Build, optimize, and scale your Ecommerce Store or fullstack web experience.",
     "subheading": "Over 10 years delivering ecommerce, consulting, and product engineering solutions for businesses of all sizes.",
     "quote": "Your storefront is only as strong as the experience behind it.",
+    "backgroundImageKey": null,
+    "sideIllustrationKey": "portfolioIllustration14",
+    "sideIllustrationAlt": "",
     "primaryCta": {
       "label": "View Services",
       "href": "/#services"

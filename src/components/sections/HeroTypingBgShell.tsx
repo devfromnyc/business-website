@@ -6,7 +6,8 @@ import { useEffect, useRef, useState } from "react";
 const PARALLAX_SCROLL_FACTOR = 0.28;
 
 export type HeroTypingBgShellProps = {
-  backgroundImage: StaticImageData;
+  /** When omitted or undefined, no photo background is rendered (gradient overlays only). */
+  backgroundImage?: StaticImageData | null;
   ariaLabel: string;
   /** When true, background image moves subtly on scroll (disabled when `prefers-reduced-motion` is set). */
   parallaxScroll?: boolean;
@@ -14,7 +15,7 @@ export type HeroTypingBgShellProps = {
 };
 
 /**
- * Shared full-bleed hero shell: parallax background layer, gradient overlay, content column wrapper.
+ * Shared full-bleed hero shell: optional parallax photo, gradient overlay, content wrapper.
  */
 export default function HeroTypingBgShell({
   backgroundImage,
@@ -26,7 +27,8 @@ export default function HeroTypingBgShell({
   const [bgTranslateY, setBgTranslateY] = useState(0);
   const scrollRaf = useRef<number>(0);
 
-  const parallaxActive = parallaxScroll && !reducedMotion;
+  const hasBackgroundPhoto = backgroundImage != null;
+  const parallaxActive = hasBackgroundPhoto && parallaxScroll && !reducedMotion;
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -67,20 +69,24 @@ export default function HeroTypingBgShell({
     <section
       className="relative left-1/2 flex min-h-[calc(100vh-5rem)] w-screen -translate-x-1/2 flex-col overflow-hidden"
       aria-label={ariaLabel}>
+      {hasBackgroundPhoto ? (
+        <div
+          className="pointer-events-none absolute inset-x-0 top-[-18%] bottom-[-18%] -z-20"
+          style={{
+            backgroundImage: `url(${backgroundImage.src})`,
+            backgroundSize: "100% 100%",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            transform: `translate3d(0, ${bgTranslateY}px, 0)`,
+            willChange: parallaxActive ? "transform" : undefined,
+          }}
+          aria-hidden
+        />
+      ) : null}
       <div
-        className="pointer-events-none absolute inset-x-0 top-[-18%] bottom-[-18%] -z-20"
-        style={{
-          backgroundImage: `url(${backgroundImage.src})`,
-          backgroundSize: "100% 100%",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-          transform: `translate3d(0, ${bgTranslateY}px, 0)`,
-          willChange: parallaxActive ? "transform" : undefined,
-        }}
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(165deg,rgba(3,7,18,0.88)_0%,rgba(12,28,58,0.78)_42%,rgba(3,7,18,0.9)_100%)]"
+        className={`pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(165deg,rgba(3,7,18,0.88)_0%,rgba(12,28,58,0.78)_42%,rgba(3,7,18,0.9)_100%)] ${
+          hasBackgroundPhoto ? "" : "opacity-95"
+        }`}
         aria-hidden
       />
       <div

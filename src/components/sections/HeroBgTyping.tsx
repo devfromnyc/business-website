@@ -11,7 +11,8 @@ export type HeroBgTypingCta = {
 };
 
 export type HeroBgTypingProps = {
-  backgroundImage: StaticImageData;
+  /** When omitted, no photo background is rendered. */
+  backgroundImage?: StaticImageData | null;
   sectionAriaLabel: string;
   eyebrow: string;
   heading: string;
@@ -102,7 +103,7 @@ export default function HeroBgTyping({
 
   return (
     <HeroTypingBgShell
-      backgroundImage={backgroundImage}
+      backgroundImage={backgroundImage ?? null}
       ariaLabel={sectionAriaLabel}
       parallaxScroll={parallaxScroll}>
       <div className="flex min-h-[400px] min-w-0 flex-col justify-start gap-6 text-left">
