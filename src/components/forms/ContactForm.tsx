@@ -21,7 +21,7 @@ const initialState: FormState = {
 };
 
 const inputClassName =
-  "rounded-md border border-brand-border bg-brand-paper-strong px-3 py-2 text-brand-ink outline-none ring-brand-accent/40 focus:ring-2";
+  "rounded-md border border-brand-border bg-brand-panel-raised px-3 py-2 text-brand-ink outline-none ring-brand-accent/40 focus:ring-2";
 
 export default function ContactForm() {
   const [form, setForm] = useState<FormState>(initialState);

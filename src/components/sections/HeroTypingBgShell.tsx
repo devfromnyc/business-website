@@ -80,7 +80,11 @@ export default function HeroTypingBgShell({
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(160deg,rgba(2,6,23,0.76)_0%,rgba(15,23,42,0.72)_45%,rgba(2,6,23,0.78)_100%)]"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(165deg,rgba(3,7,18,0.88)_0%,rgba(12,28,58,0.78)_42%,rgba(3,7,18,0.9)_100%)]"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(61,124,255,0.18),transparent_60%)]"
         aria-hidden
       />
       <div className="relative z-0 mx-auto flex w-full max-w-6xl flex-1 flex-col items-stretch justify-center gap-10 px-6 py-16 md:px-10 md:py-20">

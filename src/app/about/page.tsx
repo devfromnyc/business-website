@@ -10,7 +10,7 @@ export default function AboutPage() {
         <p className="max-w-4xl text-lg leading-relaxed text-brand-muted">{siteContent.about.focus}</p>
       </ScrollFade>
 
-      <ScrollFade className="flex flex-col gap-5 rounded-xl border border-brand-border bg-brand-paper p-8 shadow-sm">
+      <ScrollFade className="flex flex-col gap-5 cyber-panel rounded-xl p-8">
         <h2 className="text-2xl font-semibold text-brand-ink">What Clients Rely On</h2>
         <div className="flex flex-col gap-3">
           {siteContent.about.highlights.map((highlight) => (

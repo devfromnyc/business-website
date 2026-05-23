@@ -32,7 +32,7 @@ export default function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "border-b border-brand-border/80 bg-brand-canvas/90 backdrop-blur"
+          ? "border-b border-brand-border bg-brand-panel-raised/85 backdrop-blur-md"
           : "border-b border-transparent bg-transparent"
       }`}
     >
@@ -40,13 +40,13 @@ export default function Header() {
         <Link href="/" className="group flex flex-col">
           <span
             className={`text-sm font-semibold uppercase tracking-[0.2em] text-brand-accent transition-colors duration-300 ease-out ${
-              isScrolled ? "group-hover:text-brand-ink" : "group-hover:text-white"
+              isScrolled ? "group-hover:text-brand-accent-secondary" : "group-hover:text-brand-accent-secondary"
             }`}>
             {siteContent.brand.name}
           </span>
           <span
             className={`text-xs text-brand-muted transition-colors duration-300 ease-out ${
-              isScrolled ? "group-hover:text-brand-muted" : "group-hover:text-brand-paper/85"
+              isScrolled ? "group-hover:text-brand-muted-light" : "group-hover:text-brand-paper/85"
             }`}>
             {siteContent.brand.tagline}
           </span>
@@ -57,7 +57,7 @@ export default function Header() {
               key={link.href}
               href={link.href}
               className={`text-sm font-medium text-brand-accent transition-colors duration-300 ease-out ${
-                isScrolled ? "hover:text-brand-ink" : "hover:text-white"
+                isScrolled ? "hover:text-brand-accent-secondary" : "hover:text-brand-paper"
               }`}
             >
               {link.label}

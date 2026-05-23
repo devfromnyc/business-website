@@ -58,7 +58,7 @@ export default function CoreServicesShowcase() {
       className="relative left-1/2 w-screen -translate-x-1/2 scroll-mt-24"
       style={{ height: "300vh" }}
       aria-label="Core services showcase">
-      <div className="sticky top-0 h-screen overflow-hidden bg-brand-paper-strong text-brand-ink">
+      <div className="sticky top-0 h-screen overflow-hidden bg-brand-panel-raised text-brand-ink">
         <div className="mx-auto flex h-full w-full max-w-6xl items-center justify-center px-6 md:px-10">
           <div className="relative h-80 w-80 md:h-96 md:w-96">
             {services.map((service, index) => {

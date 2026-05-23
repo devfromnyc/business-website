@@ -51,9 +51,8 @@ export default function ColorRevealSection({ lines }: ColorRevealSectionProps) {
         {lines.map((line, index) => (
           <p
             key={line}
-            className="text-3xl font-bold leading-tight md:text-5xl"
+            className="text-3xl font-bold leading-tight text-cyber-gradient md:text-5xl"
             style={{
-              color: "var(--brand-ink)",
               opacity: opacities[index],
               transition: "opacity 220ms ease-out",
             }}>

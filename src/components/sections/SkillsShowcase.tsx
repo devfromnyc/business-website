@@ -18,7 +18,7 @@ const breakoutBleed =
   "relative w-screen max-w-[100vw] shrink-0 ml-[calc(50%-50vw)] mr-[calc(50%-50vw)]";
 
 const pillLabelClassName =
-  "inline-block whitespace-nowrap rounded-full border border-brand-border bg-brand-paper-strong px-3 py-2 text-center text-xs font-semibold text-brand-ink shadow-sm sm:px-4 sm:py-2.5 sm:text-sm md:px-5 md:py-3 md:text-base";
+  "inline-block whitespace-nowrap rounded-full border border-brand-border bg-brand-panel-raised px-3 py-2 text-center text-xs font-semibold text-brand-ink shadow-[0_0_16px_rgb(61_124_255/0.08)] sm:px-4 sm:py-2.5 sm:text-sm md:px-5 md:py-3 md:text-base";
 
 function entryRotation(index: number) {
   const pattern = [-10, 8, -6, 12, -8, 7, -12, 9, -7, 11, -9, 8, -11, 10];
@@ -129,7 +129,7 @@ export default function SkillsShowcase() {
         ref={panelRef}
         className="relative flex flex-col bg-brand-canvas px-6 py-16 md:px-10 md:py-24"
       >
-        <p className="mx-auto mb-6 max-w-2xl rounded-full border border-brand-border bg-brand-accent/12 px-4 py-2 text-center text-xs font-semibold uppercase tracking-[0.12em] text-brand-ink md:text-sm">
+        <p className="mx-auto mb-6 max-w-2xl rounded-full border border-brand-border bg-brand-accent/12 px-4 py-2 text-center text-xs font-semibold uppercase tracking-[0.12em] text-brand-accent md:text-sm">
           {skillsBlock.eyebrow}
         </p>
 

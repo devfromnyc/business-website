@@ -81,7 +81,7 @@ function CheckIcon() {
   return (
     <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-accent">
       <svg
-        className="h-2.5 w-2.5 text-brand-ink"
+        className="h-2.5 w-2.5 text-brand-accent-foreground"
         viewBox="0 0 12 12"
         fill="none"
         aria-hidden>
@@ -116,7 +116,7 @@ function PlanTierCard({ tier }: { tier: PlanTier }) {
   return (
     <article
       data-pricing-card
-      className="group flex min-h-[420px] flex-col rounded-3xl border border-brand-border bg-brand-paper-strong p-6 shadow-lg will-change-transform transition-shadow duration-500 ease-out hover:shadow-xl">
+      className="group flex min-h-[420px] flex-col rounded-3xl border border-brand-border bg-brand-panel-raised p-6 shadow-lg will-change-transform transition-[box-shadow,border-color] duration-500 ease-out hover:border-brand-accent/30 hover:shadow-[0_0_32px_var(--brand-glow)]">
       <div className="flex items-start justify-between gap-2">
         <div className="flex items-center gap-2.5">
           <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-sand text-sm font-bold text-brand-ink">
@@ -125,7 +125,7 @@ function PlanTierCard({ tier }: { tier: PlanTier }) {
           <h3 className="text-lg font-semibold text-brand-ink">{tier.name}</h3>
         </div>
         {tier.badge ? (
-          <span className="shrink-0 rounded-full bg-brand-accent px-2 py-0.5 text-[10px] font-bold uppercase leading-tight tracking-wide text-brand-ink">
+          <span className="shrink-0 rounded-full bg-brand-accent px-2 py-0.5 text-[10px] font-bold uppercase leading-tight tracking-wide text-brand-accent-foreground">
             {tier.badge}
           </span>
         ) : null}
@@ -166,7 +166,7 @@ function PlanTierCard({ tier }: { tier: PlanTier }) {
       <div className={pricingCtaShellClass}>
         <Link
           href={tier.cta.href}
-          className="flex w-full items-center justify-center rounded-full bg-brand-accent px-4 py-3 text-center text-sm font-semibold text-brand-ink shadow-md shadow-brand-ink/10 transition hover:bg-brand-accent-hover">
+          className="flex w-full items-center justify-center rounded-full bg-brand-accent px-4 py-3 text-center text-sm font-semibold text-brand-accent-foreground shadow-[0_0_20px_var(--brand-glow)] transition hover:bg-brand-accent-hover">
           {tier.cta.label}
         </Link>
       </div>
@@ -183,10 +183,10 @@ function CustomTierCard({ tier }: { tier: CustomTier }) {
   return (
     <article
       data-pricing-card
-      className="group flex min-h-[420px] flex-col rounded-3xl border border-brand-border bg-brand-ink p-6 shadow-xl shadow-brand-ink/25 will-change-transform transition-shadow duration-500 ease-out hover:shadow-2xl hover:shadow-brand-accent/15">
+      className="group flex min-h-[420px] flex-col rounded-3xl border border-brand-border bg-brand-surface p-6 shadow-xl shadow-black/40 will-change-transform transition-[box-shadow,border-color] duration-500 ease-out hover:border-brand-accent/35 hover:shadow-[0_0_40px_var(--brand-glow)]">
       <div className="flex items-start justify-between gap-2">
         <h3 className="text-lg font-semibold text-brand-paper">{tier.name}</h3>
-        <span className="shrink-0 rounded-full bg-brand-accent px-2 py-0.5 text-[10px] font-bold uppercase leading-tight tracking-wide text-brand-ink">
+        <span className="shrink-0 rounded-full bg-brand-accent px-2 py-0.5 text-[10px] font-bold uppercase leading-tight tracking-wide text-brand-accent-foreground">
           {tier.badge}
         </span>
       </div>
@@ -233,7 +233,7 @@ function CustomTierCard({ tier }: { tier: CustomTier }) {
       <div className={pricingCtaShellClass}>
         <Link
           href={tier.cta.href}
-          className="flex w-full items-center justify-center rounded-full bg-brand-accent px-4 py-3 text-center text-sm font-semibold text-brand-ink transition hover:bg-brand-accent-hover">
+          className="flex w-full items-center justify-center rounded-full bg-brand-accent px-4 py-3 text-center text-sm font-semibold text-brand-accent-foreground transition hover:bg-brand-accent-hover">
           {tier.cta.label}
         </Link>
       </div>
@@ -250,7 +250,7 @@ function CustomTierBanner({ tier }: { tier: CustomTier }) {
   return (
     <article
       data-pricing-card
-      className="group grid gap-8 rounded-3xl border border-brand-border bg-brand-ink p-6 shadow-xl shadow-brand-ink/25 will-change-transform transition-shadow duration-500 ease-out hover:shadow-2xl hover:shadow-brand-accent/15 md:p-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)_auto] lg:items-center lg:gap-10">
+      className="group grid gap-8 rounded-3xl border border-brand-border bg-brand-surface p-6 shadow-xl shadow-black/40 will-change-transform transition-[box-shadow,border-color] duration-500 ease-out hover:border-brand-accent/35 hover:shadow-[0_0_40px_var(--brand-glow)] md:p-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)_auto] lg:items-center lg:gap-10">
       <div className="flex flex-col gap-4">
         <div className="flex items-start gap-3">
           <CustomTierIcon />
@@ -259,7 +259,7 @@ function CustomTierBanner({ tier }: { tier: CustomTier }) {
               <h3 className="text-lg font-semibold text-brand-paper">
                 {tier.name}
               </h3>
-              <span className="rounded-full bg-brand-accent px-2 py-0.5 text-[10px] font-bold uppercase leading-tight tracking-wide text-brand-ink">
+              <span className="rounded-full bg-brand-accent px-2 py-0.5 text-[10px] font-bold uppercase leading-tight tracking-wide text-brand-accent-foreground">
                 {tier.badge}
               </span>
             </div>
@@ -507,7 +507,7 @@ export default function PricingSection({
   return (
     <ScrollFade className="w-full">
       <section
-        className="rounded-3xl border border-brand-border bg-brand-paper px-5 py-12 shadow-sm md:px-8 md:py-14"
+        className="cyber-panel rounded-3xl px-5 py-12 md:px-8 md:py-14"
         aria-labelledby={headingId}>
         <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-brand-accent">
           {content.eyebrow}
@@ -543,7 +543,7 @@ export default function PricingSection({
               onClick={() => setConversationOpen((open) => !open)}
               aria-expanded={conversationOpen}
               aria-controls="pricing-conversation-form"
-              className="mt-6 inline-flex items-center justify-center rounded-full bg-brand-accent px-8 py-3.5 text-sm font-semibold text-brand-ink shadow-[0_0_28px_rgba(251,146,60,0.25)] transition hover:bg-brand-accent-hover">
+              className="mt-6 inline-flex items-center justify-center rounded-full bg-brand-accent px-8 py-3.5 text-sm font-semibold text-brand-accent-foreground shadow-[0_0_28px_var(--brand-glow)] transition hover:bg-brand-accent-hover hover:shadow-[0_0_36px_var(--brand-glow-strong)]">
               {content.footerCta.label}
             </button>
 
@@ -553,7 +553,7 @@ export default function PricingSection({
               className="text-left"
               style={{ display: "none" }}
               aria-hidden={!conversationOpen}>
-              <div className="mt-8 flex flex-col gap-6 rounded-xl border border-brand-border bg-brand-paper-strong p-6 text-left shadow-sm md:p-8">
+              <div className="mt-8 flex flex-col gap-6 rounded-xl border border-brand-border bg-brand-panel-raised p-6 text-left shadow-sm md:p-8">
                 <h4 className="text-xl font-semibold text-brand-ink md:text-2xl">
                   Get in Touch
                 </h4>

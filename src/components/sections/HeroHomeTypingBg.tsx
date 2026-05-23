@@ -138,7 +138,7 @@ export default function HeroHomeTypingBg({
           <Link
             href={siteContent.hero.primaryCta.href}
             tabIndex={showCtas ? 0 : -1}
-            className="rounded-lg bg-brand-accent px-6 py-3 text-sm font-semibold text-brand-ink shadow-[0_0_24px_rgba(251,146,60,0.35)] transition hover:bg-brand-accent-hover">
+            className="rounded-lg bg-brand-accent px-6 py-3 text-sm font-semibold text-brand-accent-foreground shadow-[0_0_24px_var(--brand-glow)] transition hover:bg-brand-accent-hover hover:shadow-[0_0_32px_var(--brand-glow-strong)]">
             {siteContent.hero.primaryCta.label}
           </Link>
           <Link

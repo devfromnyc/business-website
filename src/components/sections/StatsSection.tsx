@@ -5,7 +5,7 @@ export default function StatsSection() {
   const { statsSection } = siteContent.homepage;
 
   return (
-    <section className="flex flex-row flex-wrap gap-8 rounded-2xl border border-brand-border bg-brand-paper p-8 shadow-sm md:p-10">
+    <section className="flex flex-row flex-wrap gap-8 rounded-2xl border border-brand-border bg-brand-panel p-8 shadow-sm md:p-10">
       <div className="flex min-w-[260px] flex-1">
         <Image
           src={statsSection.imageUrl}

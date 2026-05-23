@@ -137,7 +137,7 @@ export default function HeroCreamSplit() {
             <Link
               href={siteContent.hero.secondaryCta.href}
               tabIndex={showCtas ? 0 : -1}
-              className="rounded-lg border border-brand-border bg-brand-paper-strong/90 px-6 py-3 text-sm font-semibold text-brand-ink transition hover:border-brand-muted-light hover:bg-brand-paper-strong">
+              className="rounded-lg border border-brand-border bg-brand-panel-raised/90 px-6 py-3 text-sm font-semibold text-brand-ink transition hover:border-brand-muted-light hover:bg-brand-panel-raised">
               {siteContent.hero.secondaryCta.label}
             </Link>
           </div>

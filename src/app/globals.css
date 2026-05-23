@@ -1,47 +1,110 @@
 @import "tailwindcss";
 
 /*
-  Palette from portfolio-illustration-1.svg (Shopify board):
-  canvas #f6f1e6, paper #fbf8f1 / #fff, sand #efe7d3 / #f3ede0,
-  ink #1c2030, muted #5b6175 / #9ba2b3, accent #fb923c, border #d9d2c2
+  Cyber palette — deep navy canvas, electric blue accent, cyan highlights.
+  Text: brand-paper / brand-ink (light). Surfaces: brand-panel* (dark).
 */
 :root {
-  --background: rgb(246, 241, 230);
-  --foreground: #1c2030;
-  --brand-canvas: rgb(246, 241, 230);
-  --brand-paper: #fbf8f1;
-  --brand-paper-strong: #ffffff;
-  --brand-sand: #efe7d3;
-  --brand-sand-mid: #f3ede0;
-  --brand-ink: #1c2030;
-  --brand-muted: #5b6175;
-  --brand-muted-light: #9ba2b3;
-  --brand-accent: #fb923c;
-  --brand-accent-hover: #f97316;
-  --brand-border: #d9d2c2;
-  --brand-shadow: rgb(28 32 48 / 0.08);
+  --background: #030712;
+  --foreground: #e8ecf6;
+
+  --brand-canvas: #030712;
+  --brand-panel: #0a1120;
+  --brand-panel-raised: #0f1829;
+  --brand-sand: #131d32;
+  --brand-sand-mid: #182238;
+  --brand-surface: #050b16;
+
+  --brand-paper: #eef2ff;
+  --brand-paper-strong: #f8fafc;
+
+  --brand-ink: #e8ecf6;
+  --brand-muted: #8fa3c0;
+  --brand-muted-light: #5a6f8c;
+
+  --brand-accent: #3d7cff;
+  --brand-accent-hover: #5b93ff;
+  --brand-accent-secondary: #22d3ee;
+  --brand-accent-foreground: #020617;
+
+  --brand-border: rgb(98 140 255 / 0.22);
+  --brand-shadow: rgb(0 0 0 / 0.45);
+  --brand-glow: rgb(61 124 255 / 0.35);
+  --brand-glow-strong: rgb(61 124 255 / 0.55);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-brand-canvas: var(--brand-canvas);
+  --color-brand-panel: var(--brand-panel);
+  --color-brand-panel-raised: var(--brand-panel-raised);
   --color-brand-paper: var(--brand-paper);
   --color-brand-paper-strong: var(--brand-paper-strong);
   --color-brand-sand: var(--brand-sand);
   --color-brand-sand-mid: var(--brand-sand-mid);
+  --color-brand-surface: var(--brand-surface);
   --color-brand-ink: var(--brand-ink);
   --color-brand-muted: var(--brand-muted);
   --color-brand-muted-light: var(--brand-muted-light);
   --color-brand-accent: var(--brand-accent);
   --color-brand-accent-hover: var(--brand-accent-hover);
+  --color-brand-accent-secondary: var(--brand-accent-secondary);
+  --color-brand-accent-foreground: var(--brand-accent-foreground);
   --color-brand-border: var(--brand-border);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
+  background-image:
+    radial-gradient(
+      ellipse 90% 55% at 50% -15%,
+      rgb(61 124 255 / 0.14),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 45% 35% at 100% 20%,
+      rgb(34 211 238 / 0.07),
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 40% 30% at 0% 80%,
+      rgb(99 102 241 / 0.06),
+      transparent 45%
+    ),
+    linear-gradient(180deg, #030712 0%, #050a14 45%, #030712 100%);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+.cyber-panel {
+  border: 1px solid var(--brand-border);
+  background: linear-gradient(
+    165deg,
+    rgb(15 24 41 / 0.92) 0%,
+    rgb(10 17 32 / 0.98) 100%
+  );
+  box-shadow:
+    0 0 0 1px rgb(61 124 255 / 0.05),
+    0 16px 48px rgb(0 0 0 / 0.35);
+}
+
+.cyber-glow-ring {
+  box-shadow:
+    0 0 0 1px rgb(61 124 255 / 0.25),
+    0 8px 32px var(--brand-glow);
+}
+
+.text-cyber-gradient {
+  background: linear-gradient(
+    135deg,
+    #eef2ff 0%,
+    #93c5fd 45%,
+    #22d3ee 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }

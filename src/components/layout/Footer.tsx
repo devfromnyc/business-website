@@ -3,7 +3,7 @@ import siteContent from "@/data/site-content.json";
 
 export default function Footer() {
   return (
-    <footer className="mt-auto border-t border-brand-border bg-brand-ink">
+    <footer className="mt-auto border-t border-brand-border bg-brand-surface">
       <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-4 px-6 py-6 md:flex-row md:px-10">
         <p className="text-sm text-brand-muted-light">
           {new Date().getFullYear()} {siteContent.brand.name}. All rights reserved.

@@ -136,8 +136,8 @@ function ServiceTile({
       <div
         className={`relative mt-1 aspect-4/3 w-full overflow-hidden rounded-xl border transition-[box-shadow,opacity,border-color] duration-500 ${
           isActive
-            ? "border-brand-accent/40 bg-brand-paper opacity-100 shadow-[0_0_0_1px_rgb(251_146_60/0.25),0_8px_32px_rgb(251_146_60/0.22)]"
-            : "border-brand-border/80 bg-brand-paper/80 opacity-55 shadow-none"
+            ? "border-brand-accent/40 bg-brand-panel-raised cyber-glow-ring opacity-100"
+            : "border-brand-border/80 bg-brand-panel/80 opacity-55 shadow-none"
         }`}>
         <Image
           src={illustration}
@@ -329,7 +329,9 @@ export default function ServicesRoadmapSection({
   }, [cycleMs, stepCount, useScrollPin]);
 
   const bgClass =
-    variant === "alt" ? "bg-brand-sand-mid" : "bg-brand-paper-strong";
+    variant === "alt"
+      ? "bg-gradient-to-b from-brand-sand-mid via-brand-canvas to-brand-sand-mid"
+      : "bg-gradient-to-b from-brand-panel via-brand-canvas to-brand-panel";
 
   if (useScrollPin) {
     const pinHeightVh = stepCount * scrollPinStepVh;

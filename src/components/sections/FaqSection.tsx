@@ -7,7 +7,7 @@ export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="flex flex-col gap-6 rounded-2xl border border-brand-border bg-brand-paper p-8 shadow-sm">
+    <section className="flex flex-col gap-6 rounded-2xl cyber-panel p-8">
       <div className="flex flex-col gap-2">
         <h2 className="text-3xl font-bold text-brand-ink">FAQs</h2>
         <p className="text-brand-muted">
@@ -22,7 +22,7 @@ export default function FaqSection() {
           return (
             <article
               key={faq.question}
-              className="overflow-hidden rounded-lg border border-brand-border bg-brand-paper-strong"
+              className="overflow-hidden rounded-lg border border-brand-border bg-brand-panel-raised"
             >
               <button
                 type="button"
