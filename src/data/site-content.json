@@ -373,6 +373,9 @@
           "kind": "custom",
           "name": "Custom",
           "badge": "Programs",
+          "headline": "Custom pricing",
+          "body": "For blended engagements, retainers, and multi-phase programs",
+          "tags": ["Multi-phase", "Retainers", "Tailored"],
           "useCases": [
             "Multi step projects with multiple phases and milestones, such as a new Shopify store with a custom theme and flow automations or application with complex requirements",
             "Private or custom Shopify apps, admin tools, and integration layers",

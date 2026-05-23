@@ -27,6 +27,7 @@ type CustomTier = {
   badge: string;
   headline?: string;
   body?: string;
+  tags?: string[];
   useCases?: string[];
   howItWorks?: string;
   cta: { label: string; href: string };
@@ -77,6 +78,166 @@ function CheckIcon() {
         />
       </svg>
     </span>
+  );
+}
+
+function CustomTierIcon() {
+  return (
+    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-brand-paper/15 bg-brand-paper/5">
+      <svg
+        className="h-5 w-5 text-brand-accent"
+        viewBox="0 0 24 24"
+        fill="none"
+        aria-hidden>
+        <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="1.5" />
+        <circle cx="12" cy="12" r="3" fill="currentColor" />
+      </svg>
+    </span>
+  );
+}
+
+function PlanTierCard({ tier }: { tier: PlanTier }) {
+  return (
+    <article
+      data-pricing-card
+      className="group flex min-h-[420px] flex-col rounded-3xl border border-brand-border bg-brand-paper-strong p-6 shadow-lg will-change-transform transition-shadow duration-500 ease-out hover:shadow-xl">
+      <div className="flex items-start justify-between gap-2">
+        <div className="flex items-center gap-2.5">
+          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-sand text-sm font-bold text-brand-ink">
+            {tier.number}
+          </span>
+          <h3 className="text-lg font-semibold text-brand-ink">{tier.name}</h3>
+        </div>
+        {tier.badge ? (
+          <span className="shrink-0 rounded-full bg-brand-accent px-2 py-0.5 text-[10px] font-bold uppercase leading-tight tracking-wide text-brand-ink">
+            {tier.badge}
+          </span>
+        ) : null}
+      </div>
+
+      <div className="mt-5">
+        {tier.subtext?.trim() ? (
+          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-brand-muted">
+            {tier.subtext}
+          </p>
+        ) : null}
+        <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+          {tier.compareAtPrice ? (
+            <span className="text-lg text-brand-muted-light line-through">
+              {tier.compareAtPrice}
+            </span>
+          ) : null}
+          <span className="text-3xl font-bold text-brand-ink md:text-4xl">
+            {tier.price}
+          </span>
+          {tier.pricePeriod?.trim() ? (
+            <span className="text-sm font-medium text-brand-muted">
+              {tier.pricePeriod}
+            </span>
+          ) : null}
+        </div>
+      </div>
+
+      <ul className="mt-6 flex flex-1 flex-col gap-2.5 text-sm text-brand-muted">
+        {tier.features.map((line) => (
+          <li key={line} className="flex gap-2.5">
+            <CheckIcon />
+            <span>{line}</span>
+          </li>
+        ))}
+      </ul>
+
+      <div className={pricingCtaShellClass}>
+        <Link
+          href={tier.cta.href}
+          className="flex w-full items-center justify-center rounded-full bg-brand-accent px-4 py-3 text-center text-sm font-semibold text-brand-ink shadow-md shadow-brand-ink/10 transition hover:bg-brand-accent-hover">
+          {tier.cta.label}
+        </Link>
+      </div>
+      {tier.footnote?.trim() ? (
+        <p className="mt-3 text-center text-[11px] text-brand-muted-light">
+          {tier.footnote}
+        </p>
+      ) : null}
+    </article>
+  );
+}
+
+function CustomTierBanner({ tier }: { tier: CustomTier }) {
+  return (
+    <article
+      data-pricing-card
+      className="group grid gap-8 rounded-3xl border border-brand-border bg-brand-ink p-6 shadow-xl shadow-brand-ink/25 will-change-transform transition-shadow duration-500 ease-out hover:shadow-2xl hover:shadow-brand-accent/15 md:p-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)_auto] lg:items-center lg:gap-10">
+      <div className="flex flex-col gap-4">
+        <div className="flex items-start gap-3">
+          <CustomTierIcon />
+          <div>
+            <div className="flex flex-wrap items-center gap-2">
+              <h3 className="text-lg font-semibold text-brand-paper">
+                {tier.name}
+              </h3>
+              <span className="rounded-full bg-brand-accent px-2 py-0.5 text-[10px] font-bold uppercase leading-tight tracking-wide text-brand-ink">
+                {tier.badge}
+              </span>
+            </div>
+            {tier.body?.trim() ? (
+              <p className="mt-1 text-sm text-brand-paper/75">{tier.body}</p>
+            ) : null}
+          </div>
+        </div>
+
+        {tier.headline?.trim() ? (
+          <p className="text-2xl font-bold leading-tight text-brand-paper md:text-3xl">
+            {tier.headline}
+          </p>
+        ) : null}
+
+        {tier.tags && tier.tags.length > 0 ? (
+          <div className="flex flex-wrap gap-2">
+            {tier.tags.map((tag) => (
+              <span
+                key={tag}
+                className="rounded-full border border-brand-paper/15 bg-brand-paper/5 px-3 py-1 text-xs font-medium text-brand-paper/90">
+                {tag}
+              </span>
+            ))}
+          </div>
+        ) : null}
+      </div>
+
+      <div className="flex flex-col gap-4 border-brand-paper/10 lg:border-l lg:pl-10">
+        {tier.useCases && tier.useCases.length > 0 ? (
+          <ul className="flex flex-col gap-3 text-sm leading-snug text-brand-paper/90">
+            {tier.useCases.map((line) => (
+              <li key={line} className="flex gap-2.5">
+                <CheckIcon />
+                <span>{line}</span>
+              </li>
+            ))}
+          </ul>
+        ) : null}
+        {tier.howItWorks?.trim() ? (
+          <p className="text-sm leading-relaxed text-brand-paper/75">
+            {tier.howItWorks}
+          </p>
+        ) : null}
+      </div>
+
+      <div className="flex flex-col items-stretch gap-3 lg:min-w-[220px] lg:items-end lg:text-right">
+        <div className={pricingCtaShellClass}>
+          <Link
+            href={tier.cta.href}
+            className="flex w-full items-center justify-center rounded-full border border-brand-paper/25 bg-transparent px-6 py-3 text-center text-sm font-semibold text-brand-paper transition hover:border-brand-accent hover:bg-brand-accent hover:text-brand-ink lg:w-auto">
+            {tier.cta.label}
+          </Link>
+        </div>
+        {tier.footnote?.trim() ? (
+          <p className="text-xs leading-relaxed text-brand-paper/70 lg:max-w-[220px]">
+            {tier.footnote}
+          </p>
+        ) : null}
+      </div>
+    </article>
   );
 }
 
@@ -205,6 +366,13 @@ export default function PricingSection() {
     };
   }, []);
 
+  const planTiers = pricing.tiers.filter(
+    (tier): tier is PlanTier => tier.kind === "plan",
+  );
+  const customTier = pricing.tiers.find(
+    (tier): tier is CustomTier => tier.kind === "custom",
+  );
+
   return (
     <ScrollFade className="w-full">
       <section
@@ -222,148 +390,14 @@ export default function PricingSection() {
           {pricing.intro}
         </p>
 
-        <div
-          ref={gridRef}
-          className="mx-auto mt-10 grid max-w-6xl gap-5 sm:grid-cols-2 lg:mt-12 lg:grid-cols-4 lg:gap-4">
-          {pricing.tiers.map((tier) => {
-            if (tier.kind === "custom") {
-              return (
-                <article
-                  key={tier.name}
-                  data-pricing-card
-                  className="group flex min-h-[420px] flex-col rounded-3xl border border-brand-border bg-brand-ink p-6 shadow-xl shadow-brand-ink/25 will-change-transform transition-shadow duration-500 ease-out hover:shadow-2xl hover:shadow-brand-accent/15">
-                  <div className="flex items-start justify-between gap-2">
-                    <h3 className="text-lg font-semibold text-brand-paper">
-                      {tier.name}
-                    </h3>
-                    <span className="shrink-0 rounded-full bg-brand-accent px-2 py-0.5 text-[10px] font-bold uppercase leading-tight tracking-wide text-brand-ink">
-                      {tier.badge}
-                    </span>
-                  </div>
-                  <div className="mt-6 flex flex-1 flex-col gap-4">
-                    {tier.headline?.trim() ? (
-                      <p className="text-2xl font-bold leading-tight text-brand-paper md:text-3xl">
-                        {tier.headline}
-                      </p>
-                    ) : null}
-                    {tier.body?.trim() ? (
-                      <p className="text-sm leading-relaxed text-brand-paper/90 md:text-base">
-                        {tier.body}
-                      </p>
-                    ) : null}
-                    {tier.useCases && tier.useCases.length > 0 ? (
-                      <div>
-                        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-brand-accent">
-                          Example programs
-                        </p>
-                        <ul className="mt-2 flex flex-col gap-2 text-sm leading-snug text-brand-paper/90">
-                          {tier.useCases.map((line) => (
-                            <li key={line} className="flex gap-2">
-                              <span
-                                className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-brand-accent"
-                                aria-hidden
-                              />
-                              <span>{line}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ) : null}
-                    {tier.howItWorks?.trim() ? (
-                      <div>
-                        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-brand-accent">
-                          How it works
-                        </p>
-                        <p className="mt-2 text-sm leading-relaxed text-brand-paper/85">
-                          {tier.howItWorks}
-                        </p>
-                      </div>
-                    ) : null}
-                  </div>
-                  <div className={pricingCtaShellClass}>
-                    <Link
-                      href={tier.cta.href}
-                      className="flex w-full items-center justify-center rounded-full bg-brand-accent px-4 py-3 text-center text-sm font-semibold text-brand-ink transition hover:bg-brand-accent-hover">
-                      {tier.cta.label}
-                    </Link>
-                  </div>
-                  {tier.footnote?.trim() ? (
-                    <p className="mt-4 text-center text-xs leading-relaxed text-brand-paper/80">
-                      {tier.footnote}
-                    </p>
-                  ) : null}
-                </article>
-              );
-            }
+        <div ref={gridRef} className="mx-auto mt-10 flex max-w-6xl flex-col gap-5 lg:mt-12 lg:gap-4">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
+            {planTiers.map((tier) => (
+              <PlanTierCard key={tier.name} tier={tier} />
+            ))}
+          </div>
 
-            return (
-              <article
-                key={tier.name}
-                data-pricing-card
-                className="group flex min-h-[420px] flex-col rounded-3xl border border-brand-border bg-brand-paper-strong p-6 shadow-lg will-change-transform transition-shadow duration-500 ease-out hover:shadow-xl">
-                <div className="flex items-start justify-between gap-2">
-                  <div className="flex items-center gap-2.5">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-sand text-sm font-bold text-brand-ink">
-                      {tier.number}
-                    </span>
-                    <h3 className="text-lg font-semibold text-brand-ink">
-                      {tier.name}
-                    </h3>
-                  </div>
-                  {tier.badge ? (
-                    <span className="shrink-0 rounded-full bg-brand-accent px-2 py-0.5 text-[10px] font-bold uppercase leading-tight tracking-wide text-brand-ink">
-                      {tier.badge}
-                    </span>
-                  ) : null}
-                </div>
-
-                <div className="mt-5">
-                  {tier.subtext?.trim() ? (
-                    <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-brand-muted">
-                      {tier.subtext}
-                    </p>
-                  ) : null}
-                  <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
-                    {tier.compareAtPrice ? (
-                      <span className="text-lg text-brand-muted-light line-through">
-                        {tier.compareAtPrice}
-                      </span>
-                    ) : null}
-                    <span className="text-3xl font-bold text-brand-ink md:text-4xl">
-                      {tier.price}
-                    </span>
-                    {tier.pricePeriod?.trim() ? (
-                      <span className="text-sm font-medium text-brand-muted">
-                        {tier.pricePeriod}
-                      </span>
-                    ) : null}
-                  </div>
-                </div>
-
-                <ul className="mt-6 flex flex-1 flex-col gap-2.5 text-sm text-brand-muted">
-                  {tier.features.map((line) => (
-                    <li key={line} className="flex gap-2.5">
-                      <CheckIcon />
-                      <span>{line}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <div className={pricingCtaShellClass}>
-                  <Link
-                    href={tier.cta.href}
-                    className="flex w-full items-center justify-center rounded-full bg-brand-accent px-4 py-3 text-center text-sm font-semibold text-brand-ink shadow-md shadow-brand-ink/10 transition hover:bg-brand-accent-hover">
-                    {tier.cta.label}
-                  </Link>
-                </div>
-                {tier.footnote?.trim() ? (
-                  <p className="mt-3 text-center text-[11px] text-brand-muted-light">
-                    {tier.footnote}
-                  </p>
-                ) : null}
-              </article>
-            );
-          })}
+          {customTier ? <CustomTierBanner tier={customTier} /> : null}
         </div>
 
         {pricing.footerCta ? (
