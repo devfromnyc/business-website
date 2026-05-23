@@ -2,7 +2,7 @@
 
 import gsap from "gsap";
 import Link from "next/link";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState, type RefObject } from "react";
 import ScrollFade from "@/components/animations/ScrollFade";
 import ContactForm from "@/components/forms/ContactForm";
 import siteContent from "@/data/site-content.json";
@@ -34,10 +34,15 @@ type CustomTier = {
   footnote?: string;
 };
 
-type PricingSection = {
+/** "banner" = plans on top, custom tier full-width below. "grid" = all tiers in one grid row. */
+export type PricingCustomTierLayout = "banner" | "grid";
+
+export type PricingSectionContent = {
   eyebrow: string;
   title: string;
   intro: string | null;
+  /** Where the custom tier renders. Default: "banner". */
+  customTierLayout?: PricingCustomTierLayout;
   footerCta?: {
     title: string;
     description: string;
@@ -47,7 +52,18 @@ type PricingSection = {
   tiers: (PlanTier | CustomTier)[];
 };
 
-const pricing = siteContent.homepage.pricingSection as PricingSection;
+export type PricingSectionProps = {
+  content?: PricingSectionContent;
+  /** Overrides `content.customTierLayout`. Default: "banner". */
+  customTierLayout?: PricingCustomTierLayout;
+  headingId?: string;
+  contactAnchorId?: string;
+};
+
+const DEFAULT_PRICING_CONTENT =
+  siteContent.homepage.pricingSection as PricingSectionContent;
+
+const DEFAULT_CUSTOM_TIER_LAYOUT: PricingCustomTierLayout = "banner";
 
 /** GSAP-driven hover lift. Long `sine.inOut` + few pixels = imperceptible motion at the start of the tween. */
 const HOVER_LIFT_PX = 8;
@@ -163,6 +179,73 @@ function PlanTierCard({ tier }: { tier: PlanTier }) {
   );
 }
 
+function CustomTierCard({ tier }: { tier: CustomTier }) {
+  return (
+    <article
+      data-pricing-card
+      className="group flex min-h-[420px] flex-col rounded-3xl border border-brand-border bg-brand-ink p-6 shadow-xl shadow-brand-ink/25 will-change-transform transition-shadow duration-500 ease-out hover:shadow-2xl hover:shadow-brand-accent/15">
+      <div className="flex items-start justify-between gap-2">
+        <h3 className="text-lg font-semibold text-brand-paper">{tier.name}</h3>
+        <span className="shrink-0 rounded-full bg-brand-accent px-2 py-0.5 text-[10px] font-bold uppercase leading-tight tracking-wide text-brand-ink">
+          {tier.badge}
+        </span>
+      </div>
+      <div className="mt-6 flex flex-1 flex-col gap-4">
+        {tier.headline?.trim() ? (
+          <p className="text-2xl font-bold leading-tight text-brand-paper md:text-3xl">
+            {tier.headline}
+          </p>
+        ) : null}
+        {tier.body?.trim() ? (
+          <p className="text-sm leading-relaxed text-brand-paper/90 md:text-base">
+            {tier.body}
+          </p>
+        ) : null}
+        {tier.useCases && tier.useCases.length > 0 ? (
+          <div>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-brand-accent">
+              Example programs
+            </p>
+            <ul className="mt-2 flex flex-col gap-2 text-sm leading-snug text-brand-paper/90">
+              {tier.useCases.map((line) => (
+                <li key={line} className="flex gap-2">
+                  <span
+                    className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-brand-accent"
+                    aria-hidden
+                  />
+                  <span>{line}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+        {tier.howItWorks?.trim() ? (
+          <div>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-brand-accent">
+              How it works
+            </p>
+            <p className="mt-2 text-sm leading-relaxed text-brand-paper/85">
+              {tier.howItWorks}
+            </p>
+          </div>
+        ) : null}
+      </div>
+      <div className={pricingCtaShellClass}>
+        <Link
+          href={tier.cta.href}
+          className="flex w-full items-center justify-center rounded-full bg-brand-accent px-4 py-3 text-center text-sm font-semibold text-brand-ink transition hover:bg-brand-accent-hover">
+          {tier.cta.label}
+        </Link>
+      </div>
+      {tier.footnote?.trim() ? (
+        <p className="mt-4 text-center text-xs leading-relaxed text-brand-paper/80">
+          {tier.footnote}
+        </p>
+      ) : null}
+    </article>
+  );
+}
+
 function CustomTierBanner({ tier }: { tier: CustomTier }) {
   return (
     <article
@@ -241,11 +324,59 @@ function CustomTierBanner({ tier }: { tier: CustomTier }) {
   );
 }
 
-export default function PricingSection() {
+function PricingTiersGrid({
+  planTiers,
+  customTier,
+  customTierLayout,
+  gridRef,
+}: {
+  planTiers: PlanTier[];
+  customTier: CustomTier | undefined;
+  customTierLayout: PricingCustomTierLayout;
+  gridRef: RefObject<HTMLDivElement | null>;
+}) {
+  if (customTierLayout === "grid") {
+    return (
+      <div
+        ref={gridRef}
+        className="mx-auto mt-10 grid max-w-6xl gap-5 sm:grid-cols-2 lg:mt-12 lg:grid-cols-4 lg:gap-4">
+        {planTiers.map((tier) => (
+          <PlanTierCard key={tier.name} tier={tier} />
+        ))}
+        {customTier ? <CustomTierCard tier={customTier} /> : null}
+      </div>
+    );
+  }
+
+  return (
+    <div
+      ref={gridRef}
+      className="mx-auto mt-10 flex max-w-6xl flex-col gap-5 lg:mt-12 lg:gap-4">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
+        {planTiers.map((tier) => (
+          <PlanTierCard key={tier.name} tier={tier} />
+        ))}
+      </div>
+      {customTier ? <CustomTierBanner tier={customTier} /> : null}
+    </div>
+  );
+}
+
+export default function PricingSection({
+  content = DEFAULT_PRICING_CONTENT,
+  customTierLayout: customTierLayoutProp,
+  headingId = "pricing-heading",
+  contactAnchorId = "contact",
+}: PricingSectionProps) {
   const gridRef = useRef<HTMLDivElement | null>(null);
   const [conversationOpen, setConversationOpen] = useState(false);
   const conversationPanelRef = useRef<HTMLDivElement | null>(null);
   const conversationWasOpenRef = useRef(false);
+
+  const customTierLayout =
+    customTierLayoutProp ??
+    content.customTierLayout ??
+    DEFAULT_CUSTOM_TIER_LAYOUT;
 
   useLayoutEffect(() => {
     const panel = conversationPanelRef.current;
@@ -364,12 +495,12 @@ export default function PricingSection() {
     return () => {
       cleanups.forEach((fn) => fn());
     };
-  }, []);
+  }, [customTierLayout, content.tiers]);
 
-  const planTiers = pricing.tiers.filter(
+  const planTiers = content.tiers.filter(
     (tier): tier is PlanTier => tier.kind === "plan",
   );
-  const customTier = pricing.tiers.find(
+  const customTier = content.tiers.find(
     (tier): tier is CustomTier => tier.kind === "custom",
   );
 
@@ -377,38 +508,35 @@ export default function PricingSection() {
     <ScrollFade className="w-full">
       <section
         className="rounded-3xl border border-brand-border bg-brand-paper px-5 py-12 shadow-sm md:px-8 md:py-14"
-        aria-labelledby="pricing-heading">
+        aria-labelledby={headingId}>
         <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-brand-accent">
-          {pricing.eyebrow}
+          {content.eyebrow}
         </p>
         <h2
-          id="pricing-heading"
+          id={headingId}
           className="mx-auto mt-3 max-w-[600px] text-center text-3xl font-bold tracking-tight text-brand-ink md:text-4xl">
-          {pricing.title}
+          {content.title}
         </h2>
         <p className="mx-auto mt-3 max-w-2xl text-center text-base text-brand-muted md:text-lg">
-          {pricing.intro}
+          {content.intro}
         </p>
 
-        <div ref={gridRef} className="mx-auto mt-10 flex max-w-6xl flex-col gap-5 lg:mt-12 lg:gap-4">
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
-            {planTiers.map((tier) => (
-              <PlanTierCard key={tier.name} tier={tier} />
-            ))}
-          </div>
+        <PricingTiersGrid
+          planTiers={planTiers}
+          customTier={customTier}
+          customTierLayout={customTierLayout}
+          gridRef={gridRef}
+        />
 
-          {customTier ? <CustomTierBanner tier={customTier} /> : null}
-        </div>
-
-        {pricing.footerCta ? (
+        {content.footerCta ? (
           <div
-            id="contact"
+            id={contactAnchorId}
             className="mx-auto mt-12 max-w-2xl scroll-mt-24 border-t border-brand-border pt-10 text-center md:mt-14 md:pt-12">
             <h3 className="text-xl font-semibold tracking-tight text-brand-ink md:text-2xl">
-              {pricing.footerCta.title}
+              {content.footerCta.title}
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-brand-muted md:text-base">
-              {pricing.footerCta.description}
+              {content.footerCta.description}
             </p>
             <button
               type="button"
@@ -416,7 +544,7 @@ export default function PricingSection() {
               aria-expanded={conversationOpen}
               aria-controls="pricing-conversation-form"
               className="mt-6 inline-flex items-center justify-center rounded-full bg-brand-accent px-8 py-3.5 text-sm font-semibold text-brand-ink shadow-[0_0_28px_rgba(251,146,60,0.25)] transition hover:bg-brand-accent-hover">
-              {pricing.footerCta.label}
+              {content.footerCta.label}
             </button>
 
             <div

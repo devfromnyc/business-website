@@ -309,6 +309,7 @@
       "eyebrow": "Pricing & starting points",
       "title": "Straightforward ways to begin—then we scope the rest together",
       "intro": null,
+      "customTierLayout": "banner",
       "footerCta": {
         "title": "Need something blended or larger than a first slice?",
         "description": "Retainers, audits-only, and multi-phase programs are all on the table once we’ve talked through your roadmap. Tell me what you’re trying to ship—I’ll suggest the cleanest entry point.",
